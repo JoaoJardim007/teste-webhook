@@ -11,7 +11,7 @@ app = FastAPI()
 
 # URLs de destino dos webhooks
 UCHAT_WEBHOOK_URL = "https://bot.dfktv2.com/bot/waapi/a6854e3379f7b1dc27930c231dfa919b"
-CHATWOOT_WEBHOOK_URL = "https://chatwoot.webhook.url"
+CHATWOOT_WEBHOOK_URL = "https://n8n.automatizesolucoes.com/webhook-test/b347d093-b349-44c4-9149-fa2d4c25c065"
 
 @app.post("/webhook")
 async def receive_webhook(request: Request):
