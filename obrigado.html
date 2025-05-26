@@ -3,56 +3,972 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade | EDP Solar</title>
+    
+    <!-- Meta Tags Otimizadas -->
+    <title>Pedido Recebido com Sucesso! | EDP Solar Portugal</title>
+    <meta name="description" content="✅ Seu pedido foi recebido! Nossa equipe entrará em contacto em até 2 minutos. Prepare-se para economizar até 90% na sua conta de luz!">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✅</text></svg>">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '626594113173742');
+    fbq('track', 'PageView');
+    // Track conversion
+    fbq('track', 'CompleteRegistration', {
+        content_name: 'EDP Solar Lead',
+        status: 'completed'
+    });
+    </script>
+
+    <!-- Custom Styles for Thank You Page -->
     <style>
-        body { padding: 40px 20px; line-height: 1.8; }
-        .container { max-width: 800px; }
-        h1 { margin-bottom: 30px; text-align: center; }
-        h2 { margin-top: 30px; margin-bottom: 15px; font-size: 1.5rem; }
+        .thank-you-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--edp-blue) 0%, var(--edp-dark-blue) 100%);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thank-you-page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+
+        .thank-you-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-8) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .thank-you-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-12);
+            box-shadow: var(--shadow-2xl);
+            max-width: 600px;
+            width: 100%;
+            margin: 0 var(--space-4);
+            text-align: center;
+            position: relative;
+            border: 3px solid var(--success-green);
+        }
+
+        .thank-you-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, var(--success-green), var(--edp-green), var(--edp-blue));
+            border-radius: var(--radius-xl);
+            z-index: -1;
+            opacity: 0.1;
+            animation: borderGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            from { opacity: 0.1; }
+            to { opacity: 0.3; }
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--success-green), var(--edp-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto var(--space-6);
+            animation: successPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 30px rgba(52, 199, 89, 0.4);
+        }
+
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .thank-you-title {
+            color: var(--edp-blue);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+        }
+
+        .thank-you-subtitle {
+            color: var(--medium-text);
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-8);
+            line-height: 1.6;
+        }
+
+        .user-name {
+            color: var(--edp-green);
+            font-weight: 700;
+        }
+
+        .next-steps {
+            background: var(--edp-extra-light-blue);
+            border-radius: var(--radius-md);
+            padding: var(--space-6);
+            margin: var(--space-8) 0;
+            border: 2px solid var(--edp-light-blue);
+        }
+
+        .next-steps-title {
+            color: var(--edp-blue);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+            padding: var(--space-3);
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--edp-blue), var(--edp-dark-blue));
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: var(--text-sm);
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: var(--space-1);
+        }
+
+        .step-description {
+            font-size: var(--text-sm);
+            color: var(--medium-text);
+            margin: 0;
+        }
+
+        .contact-urgency {
+            background: linear-gradient(135deg, var(--urgent-red), #ff6b6b);
+            color: var(--white);
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
+            margin: var(--space-6) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-urgency::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: urgentShine 3s infinite;
+        }
+
+        @keyframes urgentShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .urgency-text {
+            font-weight: 700;
+            font-size: var(--text-base);
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .direct-contact {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            margin: var(--space-8) 0;
+        }
+
+        @media (min-width: 640px) {
+            .direct-contact {
+                flex-direction: row;
+            }
+        }
+
+        .contact-button {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-3);
+            padding: var(--space-5) var(--space-6);
+            border-radius: var(--radius-full);
+            font-size: var(--text-base);
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .contact-button:hover::before {
+            left: 100%;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .contact-phone {
+            background: linear-gradient(135deg, var(--phone-green), var(--success-green));
+            box-shadow: var(--shadow-green);
+        }
+
+        .contact-phone:hover {
+            background: linear-gradient(135deg, var(--success-green), var(--phone-green));
+            box-shadow: 0 15px 35px -5px rgba(52, 199, 89, 0.5);
+        }
+
+        .contact-whatsapp {
+            background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
+            box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
+        }
+
+        .contact-whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E, var(--whatsapp-green));
+            box-shadow: 0 15px 35px -5px rgba(37, 211, 102, 0.5);
+        }
+
+        .contact-icon {
+            font-size: var(--text-xl);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        .guarantee-section {
+            background: var(--background-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-6);
+            margin: var(--space-8) 0;
+            border: 1px solid var(--border-light);
+        }
+
+        .guarantee-title {
+            color: var(--edp-blue);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+        }
+
+        .guarantee-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-3);
+        }
+
+        @media (min-width: 640px) {
+            .guarantee-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--text-sm);
+            color: var(--medium-text);
+        }
+
+        .guarantee-check {
+            color: var(--success-green);
+            font-weight: 700;
+        }
+
+        .social-proof {
+            margin: var(--space-8) 0;
+            padding: var(--space-6);
+            background: linear-gradient(135deg, var(--edp-extra-light-blue), var(--white));
+            border-radius: var(--radius-md);
+            border: 2px solid var(--edp-light-blue);
+        }
+
+        .social-proof-title {
+            color: var(--edp-blue);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            text-align: center;
+        }
+
+        .social-stats {
+            display: flex;
+            justify-content: space-around;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        .social-stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: var(--edp-green);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: var(--text-xs);
+            color: var(--medium-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .loading-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--edp-blue);
+            font-weight: 600;
+            margin: var(--space-4) 0;
+        }
+
+        .loading-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .loading-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--edp-blue);
+            border-radius: 50%;
+            animation: loadingDots 1.4s infinite ease-in-out both;
+        }
+
+        .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes loadingDots {
+            0%, 80%, 100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .back-to-site {
+            margin-top: var(--space-8);
+        }
+
+        .back-link {
+            color: var(--edp-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--edp-green);
+            transform: translateX(-3px);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 639px) {
+            .thank-you-card {
+                margin: var(--space-2);
+                padding: var(--space-8);
+            }
+
+            .success-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+            }
+
+            .direct-contact {
+                gap: var(--space-3);
+            }
+
+            .contact-button {
+                padding: var(--space-4) var(--space-5);
+                font-size: var(--text-sm);
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .fade-in-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in-up:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in-up:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in-up:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://logodownload.org/wp-content/uploads/2017/08/edp-logo-1.png" alt="EDP Logo" class="edp-logo" style="display:block; margin: 0 auto 30px auto; max-width:150px;">
-        <h1>Política de Privacidade</h1>
-        <p>A sua privacidade é importante para nós. É política da EDP Solar respeitar a sua privacidade em relação a qualquer informação sua que possamos recolher no site EDP Solar, e outros sites que possuímos e operamos.</p>
+    <div class="thank-you-page">
+        <div class="thank-you-container">
+            <div class="thank-you-card">
+                <!-- Success Icon -->
+                <div class="success-icon fade-in-up">
+                    ✅
+                </div>
 
-        <h2>1. Informações que Recolhemos</h2>
-        <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos a recolher e como será usado.</p>
-        <p>Quando preenche um formulário no nosso site, podemos recolher o seu nome, número de telemóvel e endereço de email. Estas informações são usadas para o contactar sobre o seu pedido de simulação de painéis solares.</p>
+                <!-- Main Message -->
+                <h1 class="thank-you-title fade-in-up">
+                    Pedido Recebido com Sucesso, <span class="user-name" id="user-name">Amigo</span>!
+                </h1>
 
-        <h2>2. Uso das Informações</h2>
-        <p>As informações que recolhemos são usadas para:</p>
-        <ul>
-            <li>Entrar em contacto consigo para fornecer a simulação solicitada.</li>
-            <li>Melhorar os nossos serviços e ofertas.</li>
-            <li>Enviar comunicações de marketing relevantes (com o seu consentimento).</li>
-        </ul>
+                <p class="thank-you-subtitle fade-in-up">
+                    <strong>Parabéns!</strong> Você está prestes a fazer parte das mais de 5.000 famílias que já economizam centenas de euros todos os meses com energia solar EDP.
+                </p>
 
-        <h2>3. Partilha de Informações</h2>
-        <p>Não partilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei ou para o fornecimento dos nossos serviços (por exemplo, com parceiros de instalação EDP, sempre sob acordos de confidencialidade).</p>
-        
-        <h2>4. Segurança dos Dados</h2>
-        <p>Retemos as informações recolhidas apenas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
+                <!-- Next Steps -->
+                <div class="next-steps fade-in-up">
+                    <h2 class="next-steps-title">
+                        <span>🚀</span>
+                        Próximos Passos
+                    </h2>
+                    
+                    <ol class="steps-list">
+                        <li class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <div class="step-title">Análise dos Seus Dados</div>
+                                <p class="step-description">Nosso especialista está analisando suas informações para criar uma proposta personalizada</p>
+                            </div>
+                        </li>
+                        
+                        <li class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <div class="step-title">Contacto Imediato</div>
+                                <p class="step-description">Você receberá uma ligação em até <strong>2 minutos</strong> com sua simulação completa</p>
+                            </div>
+                        </li>
+                        
+                        <li class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <div class="step-title">Proposta Personalizada</div>
+                                <p class="step-description">Apresentação da sua poupança exata e condições do financiamento 0%</p>
+                            </div>
+                        </li>
+                        
+                        <li class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <div class="step-title">Instalação Express</div>
+                                <p class="step-description">Se aprovado, instalação completa em apenas 24 horas</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
 
-        <h2>5. Cookies</h2>
-        <p>O nosso site pode usar cookies para melhorar a experiência do utilizador. Cookies são pequenos arquivos que um site ou seu provedor de serviços transfere para o disco rígido do seu computador através do seu navegador Web (se você permitir) que permite que os sistemas do site ou do provedor de serviços reconheçam o seu navegador e capturem e lembrem certas informações. Usamos cookies para nos ajudar a compilar dados agregados sobre o tráfego do site e a interação no site para que possamos oferecer melhores experiências e ferramentas no site no futuro. Pode optar por desativar todos os cookies através das configurações do seu navegador.</p>
-        <p>Utilizamos cookies do Facebook Pixel para fins de marketing e análise, o que nos ajuda a medir a eficácia da nossa publicidade.</p>
+                <!-- Contact Urgency -->
+                <div class="contact-urgency fade-in-up">
+                    <p class="urgency-text">
+                        📞 <strong>Mantenha o telemóvel por perto!</strong> Nossa equipe está tentando contactá-lo AGORA mesmo.
+                    </p>
+                </div>
 
-        <h2>6. Os Seus Direitos</h2>
-        <p>Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados. Tem o direito de aceder, corrigir ou eliminar as suas informações pessoais. Para tal, por favor contacte-nos.</p>
+                <!-- Loading Indicator -->
+                <div class="loading-indicator fade-in-up">
+                    <span>Preparando sua simulação personalizada</span>
+                    <div class="loading-dots">
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                    </div>
+                </div>
 
-        <h2>7. Links para Sites de Terceiros</h2>
-        <p>O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controlo sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respetivas políticas de privacidade.</p>
+                <!-- Direct Contact Options -->
+                <div class="direct-contact fade-in-up">
+                    <a href="tel:+351912345678" 
+                       class="contact-button contact-phone"
+                       onclick="trackEvent('thank_you_phone_click')">
+                        <span class="contact-icon">📞</span>
+                        <span>Ligar Agora Mesmo</span>
+                    </a>
+                    
+                    <a href="https://wa.me/351912345678?text=Olá!%20Acabei%20de%20enviar%20meu%20pedido%20pelo%20site%20e%20gostaria%20de%20agilizar%20o%20atendimento!" 
+                       target="_blank"
+                       class="contact-button contact-whatsapp"
+                       onclick="trackEvent('thank_you_whatsapp_click')">
+                        <span class="contact-icon">💬</span>
+                        <span>WhatsApp Direto</span>
+                    </a>
+                </div>
 
-        <h2>8. Alterações a esta Política de Privacidade</h2>
-        <p>Podemos atualizar a nossa Política de Privacidade de tempos em tempos. Aconselhamo-lo a rever esta página periodicamente para quaisquer alterações. Notificaremos sobre quaisquer alterações publicando a nova Política de Privacidade nesta página. Estas alterações entram em vigor imediatamente após serem publicadas nesta página.</p>
+                <!-- Social Proof -->
+                <div class="social-proof fade-in-up">
+                    <h3 class="social-proof-title">Você está em boa companhia:</h3>
+                    <div class="social-stats">
+                        <div class="social-stat">
+                            <span class="stat-number" data-count="5000">0</span>
+                            <span class="stat-label">Famílias Atendidas</span>
+                        </div>
+                        <div class="social-stat">
+                            <span class="stat-number" data-count="98">0</span>
+                            <span class="stat-label">% Satisfação</span>
+                        </div>
+                        <div class="social-stat">
+                            <span class="stat-number" data-count="2400">0</span>
+                            <span class="stat-label">€ Poupança Média/Ano</span>
+                        </div>
+                        <div class="social-stat">
+                            <span class="stat-number" data-count="24">0</span>
+                            <span class="stat-label">Horas Instalação</span>
+                        </div>
+                    </div>
+                </div>
 
-        <h2>9. Contacte-nos</h2>
-        <p>Se tiver alguma dúvida sobre como lidamos com dados do utilizador e informações pessoais, entre em contacto connosco através do email: privacidade@edpsolar.pt (exemplo).</p>
+                <!-- Guarantees -->
+                <div class="guarantee-section fade-in-up">
+                    <h3 class="guarantee-title">
+                        <span>🛡️</span>
+                        Suas Garantias EDP Solar
+                    </h3>
+                    
+                    <div class="guarantee-list">
+                        <div class="guarantee-item">
+                            <span class="guarantee-check">✅</span>
+                            <span>Financiamento 0% garantido</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-check">✅</span>
+                            <span>25 anos de garantia total</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-check">✅</span>
+                            <span>Instalação em 24 horas</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-check">✅</span>
+                            <span>Suporte técnico vitalício</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-check">✅</span>
+                            <span>Satisfação 100% garantida</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <span class="guarantee-check">✅</span>
+                            <span>Dados 100% seguros</span>
+                        </div>
+                    </div>
+                </div>
 
-        <p style="margin-top: 30px;"><a href="index.html" class="back-to-home">Voltar à Página Inicial</a></p>
+                <!-- Back to Site -->
+                <div class="back-to-site fade-in-up">
+                    <a href="index.html" class="back-link">
+                        <span>←</span>
+                        <span>Voltar ao site principal</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Scripts -->
+    <script>
+        // Personalization and Tracking for Thank You Page
+        class ThankYouPageOptimizer {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.personalizeContent();
+                this.animateCounters();
+                this.trackConversion();
+                this.setupUrgencyReminders();
+                this.trackTimeSpent();
+            }
+
+            personalizeContent() {
+                // Get user's name from session storage
+                const userName = sessionStorage.getItem('formSubmittedName');
+                const userNameElement = document.getElementById('user-name');
+                
+                if (userName && userNameElement) {
+                    userNameElement.textContent = userName;
+                    
+                    // Track personalization success
+                    this.trackEvent('thank_you_personalized', { name: userName });
+                } else {
+                    // Fallback personalization
+                    const greetings = ['Amigo', 'Futuro Cliente EDP', 'Futuro Poupador'];
+                    const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+                    userNameElement.textContent = randomGreeting;
+                }
+            }
+
+            animateCounters() {
+                const counters = document.querySelectorAll('.stat-number[data-count]');
+                
+                const observerOptions = {
+                    threshold: 0.5,
+                    rootMargin: '0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.animateCounter(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                counters.forEach(counter => observer.observe(counter));
+            }
+
+            animateCounter(element) {
+                const targetCount = parseInt(element.dataset.count);
+                const duration = 2000;
+                const increment = targetCount / (duration / 16);
+                let currentCount = 0;
+
+                const updateCounter = () => {
+                    currentCount += increment;
+                    if (currentCount >= targetCount) {
+                        element.textContent = targetCount.toLocaleString('pt-PT');
+                    } else {
+                        element.textContent = Math.floor(currentCount).toLocaleString('pt-PT');
+                        requestAnimationFrame(updateCounter);
+                    }
+                };
+
+                requestAnimationFrame(updateCounter);
+            }
+
+            trackConversion() {
+                // Get submission data from session storage
+                const submissionData = sessionStorage.getItem('submissionData');
+                let conversionData = {
+                    page: 'thank_you',
+                    timestamp: Date.now()
+                };
+
+                if (submissionData) {
+                    try {
+                        const data = JSON.parse(submissionData);
+                        conversionData = { ...conversionData, ...data };
+                    } catch (e) {
+                        console.warn('Error parsing submission data:', e);
+                    }
+                }
+
+                // Track conversion completion
+                this.trackEvent('conversion_complete', conversionData);
+
+                // Enhanced Meta Pixel tracking
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Purchase', {
+                        value: 1.00,
+                        currency: 'EUR',
+                        content_name: 'EDP Solar Lead Conversion',
+                        content_category: 'Lead Generation'
+                    });
+                    
+                    // Custom conversion event
+                    fbq('trackCustom', 'ThankYouPageView', {
+                        conversion_value: conversionData.leadScore || 0,
+                        time_to_convert: conversionData.timeOnPage || 0
+                    });
+                }
+
+                // Google Analytics 4 (if available)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL', // Replace with your conversion ID
+                        'value': 1.0,
+                        'currency': 'EUR'
+                    });
+                }
+            }
+
+            setupUrgencyReminders() {
+                // Show additional urgency reminders after certain time periods
+                setTimeout(() => {
+                    this.showUrgencyNotification(
+                        "⏰ Nossa equipe está tentando contactá-lo há 2 minutos. Verifique se o telemóvel não está no silencioso!",
+                        'warning'
+                    );
+                }, 120000); // 2 minutes
+
+                setTimeout(() => {
+                    this.showUrgencyNotification(
+                        "📞 Última tentativa de contacto! Se não conseguirmos falar consigo, a oferta pode expirar. Ligue-nos agora!",
+                        'urgent'
+                    );
+                }, 300000); // 5 minutes
+            }
+
+            showUrgencyNotification(message, type) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = `urgency-notification ${type}`;
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <p>${message}</p>
+                        <button onclick="this.parentElement.parentElement.remove()" class="close-btn">×</button>
+                    </div>
+                `;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: ${type === 'urgent' ? '#ff3b30' : '#ff9500'};
+                    color: white;
+                    padding: 1rem;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                    z-index: 10000;
+                    max-width: 350px;
+                    animation: slideInRight 0.5s ease-out;
+                `;
+
+                document.body.appendChild(notification);
+
+                // Auto-remove after 10 seconds
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 10000);
+
+                // Track notification display
+                this.trackEvent('urgency_notification_shown', { type, message: message.substring(0, 50) });
+            }
+
+            trackTimeSpent() {
+                const startTime = Date.now();
+                let maxTimeTracked = 0;
+                
+                const trackTime = () => {
+                    const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+                    
+                    // Track milestones
+                    if (timeSpent >= 30 && maxTimeTracked < 30) {
+                        this.trackEvent('thank_you_30_seconds');
+                        maxTimeTracked = 30;
+                    } else if (timeSpent >= 60 && maxTimeTracked < 60) {
+                        this.trackEvent('thank_you_1_minute');
+                        maxTimeTracked = 60;
+                    } else if (timeSpent >= 180 && maxTimeTracked < 180) {
+                        this.trackEvent('thank_you_3_minutes');
+                        maxTimeTracked = 180;
+                    }
+                };
+
+                setInterval(trackTime, 5000); // Check every 5 seconds
+
+                // Track when leaving page
+                window.addEventListener('beforeunload', () => {
+                    const finalTime = Math.floor((Date.now() - startTime) / 1000);
+                    this.trackEvent('thank_you_page_exit', { time_spent: finalTime });
+                });
+            }
+
+            trackEvent(eventName, data = {}) {
+                // Enhanced event tracking
+                const eventData = {
+                    event: eventName,
+                    timestamp: Date.now(),
+                    page: 'thank_you',
+                    user_agent: navigator.userAgent,
+                    screen_size: `${window.innerWidth}x${window.innerHeight}`,
+                    ...data
+                };
+
+                // Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', eventName, data);
+                }
+
+                // Meta Pixel
+                if (typeof fbq !== 'undefined') {
+                    fbq('trackCustom', eventName, data);
+                }
+
+                console.log('Event tracked:', eventData);
+            }
+        }
+
+        // Global tracking function for button clicks
+        function trackEvent(eventName, data = {}) {
+            if (window.thankYouOptimizer) {
+                window.thankYouOptimizer.trackEvent(eventName, data);
+            }
+        }
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            .notification-content {
+                display: flex;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .close-btn {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                line-height: 1;
+                opacity: 0.8;
+            }
+            
+            .close-btn:hover {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.thankYouOptimizer = new ThankYouPageOptimizer();
+        });
+
+        // Phone number formatting and tracking
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('a[href^="tel:"]')) {
+                trackEvent('thank_you_phone_click', {
+                    source: 'thank_you_page',
+                    time_on_page: Math.floor((Date.now() - performance.timeOrigin) / 1000)
+                });
+            }
+            
+            if (e.target.closest('a[href*="wa.me"]')) {
+                trackEvent('thank_you_whatsapp_click', {
+                    source: 'thank_you_page',
+                    time_on_page: Math.floor((Date.now() - performance.timeOrigin) / 1000)
+                });
+            }
+        });
+    </script>
+
+    <!-- Meta Pixel No-Script -->
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=626594113173742&ev=PageView&noscript=1"
+             alt="Meta Pixel">
+    </noscript>
 </body>
 </html>

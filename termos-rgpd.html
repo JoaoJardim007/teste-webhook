@@ -3,113 +3,1239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termos de Serviço e RGPD - Energia Solar Portugal</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Reutilizando o estilo principal -->
+    
+    <!-- Meta Tags Otimizadas -->
+    <title>Termos de Serviço e RGPD | EDP Solar Portugal - Legal & Compliance</title>
+    <meta name="description" content="Conheça os Termos de Serviço e informações RGPD da EDP Solar Portugal. Transparência legal, conformidade total, proteção de dados garantida.">
+    <meta name="keywords" content="termos serviço, RGPD, legal, EDP Solar, compliance Portugal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Schema.org for Legal Terms -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Termos de Serviço e RGPD",
+        "description": "Termos de Serviço e informações RGPD da EDP Solar Portugal",
+        "publisher": {
+            "@type": "Organization",
+            "name": "EDP Solar Portugal"
+        },
+        "dateModified": "2024-05-23",
+        "inLanguage": "pt-PT",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "EDP Solar Portugal",
+            "url": "https://edpsolar.com.pt"
+        }
+    }
+    </script>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles for Terms Page -->
     <style>
-        /* Estilos iguais aos da politica-privacidade.html para consistência */
-        body {
-            background-color: var(--background-light);
-            padding-top: 20px;
-            padding-bottom: 40px;
+        :root {
+            --terms-gradient: linear-gradient(135deg, var(--edp-dark-blue) 0%, var(--dark-text) 100%);
+            --legal-max-width: 900px;
+            --legal-line-height: 1.8;
         }
-        .legal-container {
-            background-color: var(--text-light);
-            padding: 30px;
-            border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-soft);
-            max-width: 800px;
-            margin: 20px auto;
+
+        .terms-page {
+            background: var(--white);
+            min-height: 100vh;
         }
-        .legal-container h1 {
-            color: var(--primary-color);
+
+        /* Header Section */
+        .terms-header {
+            background: var(--terms-gradient);
+            color: var(--white);
+            padding: var(--space-12) 0 var(--space-8);
             text-align: center;
-            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
         }
-        .legal-container h2 {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
+
+        .terms-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.02) 50%, transparent 50%);
+            background-size: 25px 25px, 50px 50px;
+            opacity: 0.4;
         }
-        .legal-container p, .legal-container ul li {
-            font-size: var(--font-sm);
-            line-height: 1.8;
-            margin-bottom: 15px;
-            color: var(--text-dark);
+
+        .terms-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: var(--legal-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-4);
         }
-        .legal-container ul {
-            list-style-position: inside;
-            padding-left: 0;
+
+        .terms-logo {
+            width: auto;
+            height: 45px;
+            margin-bottom: var(--space-6);
+            filter: brightness(0) invert(1);
         }
-         .legal-container a {
-            color: var(--primary-color);
+
+        .terms-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+            color: var(--white);
         }
-        .last-updated {
+
+        .terms-subtitle {
+            font-size: var(--text-lg);
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto var(--space-6);
+            line-height: 1.6;
+        }
+
+        .legal-badges {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        .legal-badge {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        /* Main Content */
+        .terms-content {
+            padding: var(--space-12) 0;
+        }
+
+        .terms-container {
+            max-width: var(--legal-max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-4);
+        }
+
+        /* Document Info */
+        .document-info {
+            background: linear-gradient(135deg, var(--edp-extra-light-blue), var(--background-light));
+            border: 2px solid var(--edp-light-blue);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin-bottom: var(--space-10);
+            position: relative;
+        }
+
+        .document-info::before {
+            content: "📋";
+            position: absolute;
+            top: -12px;
+            left: var(--space-4);
+            background: var(--white);
+            padding: 0 var(--space-2);
+            font-size: var(--text-xl);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-4);
+        }
+
+        @media (min-width: 640px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .info-icon {
+            color: var(--edp-blue);
+            font-size: var(--text-lg);
+            flex-shrink: 0;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-right: var(--space-2);
+        }
+
+        .info-value {
+            color: var(--medium-text);
+        }
+
+        /* Legal Sections */
+        .legal-section {
+            margin-bottom: var(--space-10);
+            scroll-margin-top: var(--space-12);
+        }
+
+        .legal-title {
+            color: var(--edp-blue);
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 700;
+            margin-bottom: var(--space-5);
+            padding-bottom: var(--space-3);
+            border-bottom: 2px solid var(--edp-light-blue);
+            position: relative;
+        }
+
+        .legal-title::before {
+            content: attr(data-number);
+            position: absolute;
+            left: 0;
+            top: -6px;
+            background: var(--edp-blue);
+            color: var(--white);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-base);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .legal-subtitle {
+            color: var(--edp-dark-blue);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin: var(--space-6) 0 var(--space-3);
+        }
+
+        .legal-text {
+            font-size: var(--text-base);
+            line-height: var(--legal-line-height);
+            color: var(--dark-text);
+            margin-bottom: var(--space-4);
+            text-align: justify;
+        }
+
+        .legal-list {
+            margin: var(--space-4) 0 var(--space-6);
+            padding-left: var(--space-6);
+        }
+
+        .legal-list li {
+            margin-bottom: var(--space-3);
+            line-height: var(--legal-line-height);
+            color: var(--dark-text);
+        }
+
+        .legal-list ol {
+            margin-top: var(--space-3);
+            padding-left: var(--space-4);
+        }
+
+        /* Important Notice Boxes */
+        .important-notice {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 2px solid #f39c12;
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            margin: var(--space-6) 0;
+            position: relative;
+        }
+
+        .important-notice::before {
+            content: "⚠️";
+            position: absolute;
+            top: -12px;
+            left: var(--space-4);
+            background: var(--white);
+            padding: 0 var(--space-2);
+            font-size: var(--text-xl);
+        }
+
+        .notice-title {
+            color: #d68910;
+            font-weight: 700;
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-3);
+        }
+
+        /* RGPD Specific Sections */
+        .rgpd-section {
+            background: linear-gradient(135deg, var(--edp-extra-light-blue), var(--white));
+            border: 2px solid var(--edp-green);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            margin: var(--space-8) 0;
+            position: relative;
+        }
+
+        .rgpd-section::before {
+            content: "🛡️ RGPD";
+            position: absolute;
+            top: -12px;
+            left: var(--space-4);
+            background: var(--edp-green);
+            color: var(--white);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-base);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .rgpd-title {
+            color: var(--edp-blue);
+            font-weight: 700;
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-4);
+        }
+
+        /* Data Categories Table */
+        .data-categories {
+            overflow-x: auto;
+            margin: var(--space-6) 0;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-base);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            font-size: var(--text-sm);
+        }
+
+        .data-table thead {
+            background: linear-gradient(135deg, var(--edp-green), var(--success-green));
+            color: var(--white);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: var(--space-3) var(--space-4);
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: top;
+        }
+
+        .data-table th {
+            font-weight: 600;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table tbody tr:hover {
+            background: var(--edp-extra-light-blue);
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background: var(--background-light);
+        }
+
+        /* Contact Information */
+        .contact-legal {
+            background: linear-gradient(135deg, var(--background-light), var(--white));
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            margin: var(--space-10) 0;
             text-align: center;
-            margin-bottom: 30px;
-            font-style: italic;
-            color: #666;
+            border: 2px solid var(--border-light);
+        }
+
+        .contact-legal-title {
+            color: var(--edp-blue);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-3);
+        }
+
+        .contact-legal-description {
+            color: var(--medium-text);
+            margin-bottom: var(--space-6);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .legal-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-4);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+            .legal-contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .legal-contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-4);
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .legal-contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .legal-contact-icon {
+            color: var(--edp-green);
+            font-size: var(--text-xl);
+            flex-shrink: 0;
+        }
+
+        .legal-contact-text {
+            text-align: left;
+        }
+
+        .legal-contact-label {
+            font-weight: 600;
+            color: var(--dark-text);
+            font-size: var(--text-sm);
+            display: block;
+            margin-bottom: var(--space-1);
+        }
+
+        .legal-contact-value {
+            color: var(--medium-text);
+            font-size: var(--text-sm);
+        }
+
+        /* Back to Site Button */
+        .back-to-site {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            background: linear-gradient(135deg, var(--edp-blue), var(--edp-dark-blue));
+            color: var(--white);
+            padding: var(--space-4) var(--space-6);
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: var(--shadow-blue);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .back-to-site:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px -5px rgba(0, 102, 204, 0.5);
+        }
+
+        /* Year Display */
+        .current-year {
+            font-weight: 700;
+            color: var(--edp-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 639px) {
+            .terms-container {
+                padding: 0 var(--space-3);
+            }
+            
+            .legal-list {
+                padding-left: var(--space-4);
+            }
+            
+            .back-to-site {
+                bottom: var(--space-4);
+                right: var(--space-4);
+                padding: var(--space-3) var(--space-5);
+                font-size: var(--text-sm);
+            }
+            
+            .info-grid,
+            .legal-contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .legal-contact-item {
+                text-align: center;
+                flex-direction: column;
+            }
+            
+            .legal-contact-text {
+                text-align: center;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .back-to-site,
+            .legal-badges {
+                display: none;
+            }
+            
+            .terms-header {
+                background: none;
+                color: var(--dark-text);
+            }
+            
+            .legal-title {
+                page-break-after: avoid;
+            }
+            
+            .legal-section {
+                page-break-inside: avoid;
+            }
+            
+            .rgpd-section {
+                border: 1px solid var(--border-light);
+                background: none;
+            }
+        }
+
+        /* Accessibility Enhancements */
+        .legal-section:focus {
+            outline: 3px solid var(--edp-green);
+            outline-offset: 4px;
+        }
+
+        /* Smooth scrolling */
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
         }
     </style>
 </head>
-<body>
-    <div class="container legal-container">
-        <h1>Termos de Serviço e Informação RGPD</h1>
-        <p class="last-updated">Última atualização: 15 de abril de 2025</p>
+<body class="terms-page">
+    <!-- Header Section -->
+    <header class="terms-header">
+        <div class="terms-header-content">
+            <img src="https://logodownload.org/wp-content/uploads/2017/08/edp-logo-1.png" 
+                 alt="EDP Logo" 
+                 class="terms-logo"
+                 width="110"
+                 height="45">
+            
+            <h1 class="terms-title">Termos de Serviço e Informação RGPD</h1>
+            
+            <p class="terms-subtitle">
+                Termos legais transparentes e conformidade total com o Regulamento Geral 
+                sobre a Proteção de Dados para proteger os seus direitos
+            </p>
+            
+            <div class="legal-badges">
+                <div class="legal-badge">
+                    <span>⚖️</span>
+                    <span>Lei Portuguesa</span>
+                </div>
+                <div class="legal-badge">
+                    <span>🇪🇺</span>
+                    <span>RGPD Compliant</span>
+                </div>
+                <div class="legal-badge">
+                    <span>📜</span>
+                    <span>Transparência Total</span>
+                </div>
+                <div class="legal-badge">
+                    <span>🔒</span>
+                    <span>Direitos Protegidos</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <h2>1. Termos</h2>
-        <p>Ao aceder ao site <a href="[URL DO SEU SITE]">[Nome da Sua Empresa/Website]</a>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou aceder a este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</p>
+    <!-- Main Content -->
+    <main class="terms-content">
+        <div class="terms-container">
+            <!-- Document Information -->
+            <div class="document-info">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-icon">📅</span>
+                        <span class="info-label">Última Atualização:</span>
+                        <span class="info-value">23 de Maio de 2025</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🌍</span>
+                        <span class="info-label">Jurisdição:</span>
+                        <span class="info-value">Portugal e União Europeia</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📋</span>
+                        <span class="info-label">Versão:</span>
+                        <span class="info-value">2.0 - RGPD Enhanced</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <span class="info-label">Contacto Legal:</span>
+                        <span class="info-value">legal@edpsolar.pt</span>
+                    </div>
+                </div>
+            </div>
 
-        <h2>2. Uso de Licença</h2>
-        <p>É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site [Nome da Sua Empresa/Website], apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:</p>
-        <ol>
-            <li>modificar ou copiar os materiais;</li>
-            <li>usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);</li>
-            <li>tentar descompilar ou fazer engenharia reversa de qualquer software contido no site [Nome da Sua Empresa/Website];</li>
-            <li>remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou</li>
-            <li>transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</li>
-        </ol>
-        <p>Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por [Nome da Sua Empresa/Website] a qualquer momento. Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrónico ou impresso.</p>
+            <!-- Terms of Service Section -->
+            <section id="termos" class="legal-section">
+                <h2 class="legal-title" data-number="Seção 1">1. Termos de Utilização do Website</h2>
+                <p class="legal-text">
+                    Ao aceder e utilizar o website da EDP Solar Portugal (doravante "Site"), concorda em 
+                    cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis, e concorda 
+                    que é responsável pelo cumprimento de todas as leis locais aplicáveis em Portugal e 
+                    na União Europeia.
+                </p>
+                <p class="legal-text">
+                    Se não concordar com algum destes termos, está expressamente proibido de usar ou 
+                    aceder a este Site. Os materiais contidos neste Site são protegidos pelas leis de 
+                    direitos autorais e marcas comerciais aplicáveis em Portugal e na União Europeia.
+                </p>
+                
+                <div class="important-notice">
+                    <h3 class="notice-title">Aceitação dos Termos</h3>
+                    <p class="legal-text">
+                        A utilização contínua deste Site constitui aceitação destes termos. 
+                        Se não concordar, deve cessar imediatamente a utilização do Site.
+                    </p>
+                </div>
+            </section>
 
-        <h2>3. Isenção de Responsabilidade</h2>
-        <ol>
-            <li>Os materiais no site da [Nome da Sua Empresa/Website] são fornecidos 'como estão'. [Nome da Sua Empresa/Website] não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.</li>
-            <li>Além disso, a [Nome da Sua Empresa/Website] não garante ou faz qualquer representação relativa à precisão, aos resultados prováveis ou à confiabilidade do uso dos materiais em seu site ou de outra forma relacionado a esses materiais ou em sites vinculados a este site.</li>
-        </ol>
+            <!-- Usage License Section -->
+            <section id="licenca" class="legal-section">
+                <h2 class="legal-title" data-number="Seção 2">2. Licença de Utilização</h2>
+                <p class="legal-text">
+                    É concedida permissão para visualizar temporariamente uma cópia dos materiais 
+                    (informações ou software) no Site da EDP Solar Portugal, apenas para visualização 
+                    transitória pessoal e não comercial. Esta é a concessão de uma licença limitada, 
+                    não uma transferência de título.
+                </p>
+                
+                <h3 class="legal-subtitle">2.1 Restrições de Utilização</h3>
+                <p class="legal-text">Sob esta licença, você NÃO pode:</p>
+                <ol class="legal-list">
+                    <li>Modificar ou copiar os materiais para fins comerciais;</li>
+                    <li>Usar os materiais para qualquer finalidade comercial ou para exibição pública;</li>
+                    <li>Tentar descompilar ou fazer engenharia reversa de qualquer software contido no Site;</li>
+                    <li>Remover quaisquer direitos autorais ou outras notações de propriedade dos materiais;</li>
+                    <li>Transferir os materiais para outra pessoa ou "espelhar" os materiais em qualquer outro servidor;</li>
+                    <li>Usar o Site para atividades ilegais ou não autorizadas;</li>
+                    <li>Interferir com a segurança ou funcionalidade do Site.</li>
+                </ol>
+                
+                <p class="legal-text">
+                    Esta licença será automaticamente rescindida se você violar alguma dessas restrições 
+                    e poderá ser rescindida pela EDP Solar Portugal a qualquer momento, com ou sem aviso prévio.
+                </p>
+            </section>
 
-        <h2>4. Limitações</h2>
-        <p>Em nenhum caso o [Nome da Sua Empresa/Website] ou seus fornecedores serão responsáveis por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais no site da [Nome da Sua Empresa/Website], mesmo que [Nome da Sua Empresa/Website] ou um representante autorizado da [Nome da Sua Empresa/Website] tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos consequentes ou incidentais, essas limitações podem não se aplicar a você.</p>
+            <!-- Disclaimer Section -->
+            <section id="isencao" class="legal-section">
+                <h2 class="legal-title" data-number="Seção 3">3. Isenção de Responsabilidade</h2>
+                
+                <h3 class="legal-subtitle">3.1 Fornecimento de Materiais "Como Estão"</h3>
+                <p class="legal-text">
+                    Os materiais no Site da EDP Solar Portugal são fornecidos "como estão". A EDP Solar Portugal 
+                    não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as 
+                    outras garantias, incluindo, sem limitação, garantias implícitas ou condições de:
+                </p>
+                <ul class="legal-list">
+                    <li>Comercialização e adequação a um fim específico;</li>
+                    <li>Não violação de propriedade intelectual ou outros direitos;</li>
+                    <li>Precisão, completude ou atualidade das informações;</li>
+                    <li>Disponibilidade contínua do serviço.</li>
+                </ul>
+                
+                <h3 class="legal-subtitle">3.2 Precisão das Informações</h3>
+                <p class="legal-text">
+                    Além disso, a EDP Solar Portugal não garante ou faz qualquer representação relativa à 
+                    precisão, aos resultados prováveis ou à confiabilidade do uso dos materiais em seu Site 
+                    ou de outra forma relacionado a esses materiais ou em sites vinculados a este Site.
+                </p>
+                
+                <div class="important-notice">
+                    <h3 class="notice-title">Importante - Simulações e Estimativas</h3>
+                    <p class="legal-text">
+                        Todas as simulações de poupança, estimativas de produção de energia solar e 
+                        cálculos financeiros são aproximados e baseados em condições ideais. Os resultados 
+                        reais podem variar devido a fatores climáticos, técnicos e de instalação.
+                    </p>
+                </div>
+            </section>
 
-        <h2>5. Precisão dos Materiais</h2>
-        <p>Os materiais exibidos no site da [Nome da Sua Empresa/Website] podem incluir erros técnicos, tipográficos ou fotográficos. [Nome da Sua Empresa/Website] não garante que qualquer material em seu site seja preciso, completo ou atual. [Nome da Sua Empresa/Website] pode fazer alterações nos materiais contidos em seu site a qualquer momento, sem aviso prévio. No entanto, [Nome da Sua Empresa/Website] não se compromete a atualizar os materiais.</p>
+            <!-- Limitations Section -->
+            <section id="limitacoes" class="legal-section">
+                <h2 class="legal-title" data-number="Seção 4">4. Limitações de Responsabilidade</h2>
+                <p class="legal-text">
+                    Em nenhum caso a EDP Solar Portugal ou seus fornecedores serão responsáveis por 
+                    quaisquer danos (incluindo, sem limitação, danos por perda de dados, lucros cessantes, 
+                    interrupção dos negócios, ou outros danos pecuniários) decorrentes do uso ou da 
+                    incapacidade de usar os materiais no Site da EDP Solar Portugal.
+                </p>
+                
+                <h3 class="legal-subtitle">4.1 Exclusões Aplicáveis</h3>
+                <p class="legal-text">
+                    Esta limitação aplica-se mesmo que a EDP Solar Portugal ou um representante autorizado 
+                    tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como 
+                    algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de 
+                    responsabilidade por danos consequentes ou incidentais, essas limitações podem não se 
+                    aplicar a você.
+                </p>
+                
+                <h3 class="legal-subtitle">4.2 Valor Máximo de Responsabilidade</h3>
+                <p class="legal-text">
+                    Em qualquer caso, a responsabilidade total da EDP Solar Portugal não excederá o valor 
+                    pago pelos serviços nos 12 meses anteriores ao evento que deu origem à reclamação.
+                </p>
+            </section>
 
-        <h2>6. Links</h2>
-        <p>O [Nome da Sua Empresa/Website] não analisou todos os sites vinculados ao seu site e não é responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link não implica endosso por [Nome da Sua Empresa/Website] do site. O uso de qualquer site vinculado é por conta e risco do usuário.</p>
+            <!-- Accuracy Section -->
+            <section id="precisao" class="legal-section">
+                <h2 class="legal-title" data-number="Seção 5">5. Precisão dos Materiais</h2>
+                <p class="legal-text">
+                    Os materiais exibidos no Site da EDP Solar Portugal podem incluir erros técnicos, 
+                    tipográficos ou fotográficos. A EDP Solar Portugal não garante que qualquer material 
+                    em seu Site seja preciso, completo ou atual.
+                </p>
+                <p class="legal-text">
+                    A EDP Solar Portugal pode fazer alterações nos materiais contidos em seu Site a qualquer 
+                    momento, sem aviso prévio. No entanto, a EDP Solar Portugal não se compromete a atualizar 
+                    os materiais regularmente.
+                </p>
+            </section>
 
-        <h2>7. Modificações</h2>
-        <p>O [Nome da Sua Empresa/Website] pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.</p>
+            <!-- Links Section -->
+            <section id="links" class="legal-section">
+                <h2 class="legal-title" data-number="Seção 6">6. Links para Sites Externos</h2>
+                <p class="legal-text">
+                    A EDP Solar Portugal não analisou todos os sites vinculados ao seu Site e não é 
+                    responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link não 
+                    implica endosso pela EDP Solar Portugal do site externo.
+                </p>
+                <p class="legal-text">
+                    O uso de qualquer site vinculado é por conta e risco do utilizador. Recomendamos que 
+                    reveja as políticas de privacidade e termos de utilização de todos os sites externos 
+                    que visitar.
+                </p>
+            </section>
 
-        <h2>8. Lei Aplicável</h2>
-        <p>Estes termos e condições são regidos e interpretados de acordo com as leis de Portugal e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais nesse país.</p>
-        
-        <h2>9. Informação sobre o Regulamento Geral sobre a Proteção de Dados (RGPD)</h2>
-        <p>A [Nome da Sua Empresa/Website] está empenhada em proteger a sua privacidade e em cumprir o Regulamento Geral sobre a Proteção de Dados (RGPD) (UE) 2016/679.</p>
-        <p><strong>Controlador de Dados:</strong> O controlador dos seus dados pessoais é [Nome da Sua Empresa], com sede em [Sua Morada Comercial Completa], NIF [Seu NIF].</p>
-        <p><strong>Finalidades do Tratamento e Base Legal:</strong> Os seus dados pessoais (nome, telemóvel, e-mail opcional) são recolhidos através do nosso formulário de contacto com a finalidade de responder ao seu pedido de proposta personalizada para instalação de painéis solares e para subsequente comunicação relacionada com este serviço. A base legal para este tratamento é o seu consentimento, manifestado ao submeter o formulário e aceitar a nossa política de privacidade (Artigo 6º, nº 1, alínea a) do RGPD), e a necessidade de executar diligências pré-contratuais a seu pedido (Artigo 6º, nº 1, alínea b) do RGPD).</p>
-        <p><strong>Transferência de Dados e Destinatários:</strong> Os seus dados poderão ser partilhados com prestadores de serviços que nos auxiliam na nossa operação (ex: plataforma de automação para gestão de contactos, como [Nome da Plataforma de Automação, se usar, ex: N8N], e o Meta para fins de otimização de publicidade através da API de Conversões). Garantimos que todos os prestadores de serviços cumprem com os requisitos de proteção de dados.</p>
-        <p><strong>Período de Conservação:</strong> Os seus dados serão conservados pelo período estritamente necessário para a prossecução das finalidades para as quais foram recolhidos, ou por períodos mais longos se tal for exigido por obrigações legais (ex: fiscais, comerciais).</p>
-        <p><strong>Os Seus Direitos:</strong> Conforme detalhado na nossa <a href="politica-privacidade.html">Política de Privacidade</a>, você tem o direito de aceder, retificar, apagar, limitar o tratamento, opor-se ao tratamento e à portabilidade dos seus dados. Para exercer estes direitos, ou para qualquer questão relacionada com a proteção dos seus dados, por favor contacte-nos através de [Seu E-mail de Contato para Privacidade].</p>
-        <p>Se considerar que o tratamento dos seus dados pessoais viola o RGPD, tem o direito de apresentar uma reclamação junto da Comissão Nacional de Proteção de Dados (CNPD) ou outra autoridade de controlo competente.</p>
-    </div>
+            <!-- Modifications Section -->
+            <section id="modificacoes" class="legal-section">
+                <h2 class="legal-title" data-number="Seção 7">7. Modificações dos Termos</h2>
+                <p class="legal-text">
+                    A EDP Solar Portugal pode revisar estes termos de serviço do Site a qualquer momento, 
+                    sem aviso prévio. Ao usar este Site, você concorda em ficar vinculado à versão atual 
+                    desses termos de serviço.
+                </p>
+                <p class="legal-text">
+                    As modificações entrarão em vigor imediatamente após a sua publicação no Site. 
+                    Recomendamos que reveja estes termos periodicamente para se manter informado sobre 
+                    quaisquer alterações.
+                </p>
+            </section>
 
-    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #666;">
-        <p>&copy; <span id="current-year-terms"></span> Energia Solar Portugal. Todos os direitos reservados.</p>
-        <p><a href="index.html" style="color: var(--primary-color);">Voltar à página inicial</a></p>
-    </footer>
+            <!-- Applicable Law Section -->
+            <section id="lei-aplicavel" class="legal-section">
+                <h2 class="legal-title" data-number="Seção 8">8. Lei Aplicável e Jurisdição</h2>
+                <p class="legal-text">
+                    Estes termos e condições são regidos e interpretados de acordo com as leis de Portugal 
+                    e da União Europeia. Você submete-se irrevogavelmente à jurisdição exclusiva dos 
+                    tribunais portugueses para resolução de qualquer disputa relacionada com estes termos 
+                    ou com a utilização do Site.
+                </p>
+                <p class="legal-text">
+                    Qualquer ação legal deve ser iniciada dentro de um (1) ano após a causa da ação ter surgido, 
+                    ou será permanentemente impedida.
+                </p>
+            </section>
+
+            <!-- GDPR Information Section -->
+            <div class="rgpd-section">
+                <h2 class="rgpd-title">9. Informação sobre o Regulamento Geral sobre a Proteção de Dados (RGPD)</h2>
+                <p class="legal-text">
+                    A EDP Solar Portugal está empenhada em proteger a sua privacidade e em cumprir 
+                    integralmente o Regulamento Geral sobre a Proteção de Dados (RGPD) (UE) 2016/679 
+                    e toda a legislação portuguesa aplicável em matéria de proteção de dados.
+                </p>
+
+                <h3 class="legal-subtitle">9.1 Responsável pelo Tratamento</h3>
+                <p class="legal-text">
+                    <strong>Entidade:</strong> EDP Solar Portugal, Lda.<br>
+                    <strong>Morada:</strong> [Sua Morada Comercial Completa]<br>
+                    <strong>NIF:</strong> [Seu NIF]<br>
+                    <strong>Email de Privacidade:</strong> privacidade@edpsolar.pt<br>
+                    <strong>Telefone:</strong> +351 912 345 678
+                </p>
+
+                <h3 class="legal-subtitle">9.2 Dados Pessoais Tratados</h3>
+                <div class="data-categories">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Categoria de Dados</th>
+                                <th>Dados Específicos</th>
+                                <th>Finalidade</th>
+                                <th>Base Legal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Identificação</strong></td>
+                                <td>Nome, telefone, email</td>
+                                <td>Contacto comercial</td>
+                                <td>Consentimento / Interesse legítimo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Navegação</strong></td>
+                                <td>IP, cookies, páginas visitadas</td>
+                                <td>Análise e melhoria do site</td>
+                                <td>Interesse legítimo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contratuais</strong></td>
+                                <td>Dados do contrato, pagamentos</td>
+                                <td>Execução do contrato</td>
+                                <td>Execução contratual</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marketing</strong></td>
+                                <td>Preferências, histórico</td>
+                                <td>Comunicação comercial</td>
+                                <td>Consentimento</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="legal-subtitle">9.3 Os Seus Direitos RGPD</h3>
+                <p class="legal-text">Conforme o RGPD, você tem os seguintes direitos:</p>
+                <ul class="legal-list">
+                    <li><strong>Direito de Acesso:</strong> Obter informações sobre os seus dados pessoais;</li>
+                    <li><strong>Direito de Retificação:</strong> Corrigir dados incorretos ou incompletos;</li>
+                    <li><strong>Direito de Apagamento:</strong> Solicitar a eliminação dos seus dados;</li>
+                    <li><strong>Direito de Limitação:</strong> Restringir o tratamento dos seus dados;</li>
+                    <li><strong>Direito de Portabilidade:</strong> Receber os seus dados em formato estruturado;</li>
+                    <li><strong>Direito de Oposição:</strong> Opor-se ao tratamento baseado em interesse legítimo;</li>
+                    <li><strong>Direito de Retirar Consentimento:</strong> Retirar o consentimento a qualquer momento.</li>
+                </ul>
+
+                <h3 class="legal-subtitle">9.4 Transferências Internacionais</h3>
+                <p class="legal-text">
+                    Alguns dos nossos prestadores de serviços (como Google, Facebook) podem estar localizados 
+                    fora do Espaço Económico Europeu (EEE). Garantimos que todas as transferências são feitas 
+                    com salvaguardas adequadas, incluindo:
+                </p>
+                <ul class="legal-list">
+                    <li>Decisões de adequação da Comissão Europeia;</li>
+                    <li>Cláusulas contratuais-tipo aprovadas;</li>
+                    <li>Certificações e códigos de conduta apropriados.</li>
+                </ul>
+
+                <h3 class="legal-subtitle">9.5 Período de Conservação</h3>
+                <p class="legal-text">
+                    Conservamos os seus dados pelo período estritamente necessário para as finalidades 
+                    para as quais foram recolhidos, ou conforme exigido por obrigações legais:
+                </p>
+                <ul class="legal-list">
+                    <li><strong>Dados de contacto (leads):</strong> 2 anos após o último contacto;</li>
+                    <li><strong>Dados de clientes:</strong> Durante a vigência do contrato + 5 anos;</li>
+                    <li><strong>Dados fiscais:</strong> 10 anos (obrigação legal);</li>
+                    <li><strong>Dados de marketing:</strong> Até retirada do consentimento.</li>
+                </ul>
+
+                <div class="important-notice">
+                    <h3 class="notice-title">Autoridade de Controlo</h3>
+                    <p class="legal-text">
+                        Se considerar que o tratamento dos seus dados pessoais viola o RGPD, tem o direito 
+                        de apresentar uma reclamação junto da <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong> 
+                        através do website www.cnpd.pt ou presencialmente.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-legal">
+                <h2 class="contact-legal-title">
+                    <span>📞</span>
+                    Contacto para Questões Legais
+                </h2>
+                <p class="contact-legal-description">
+                    Para questões relacionadas com estes termos, exercício de direitos RGPD, 
+                    ou qualquer assunto legal, contacte-nos através dos seguintes meios:
+                </p>
+                
+                <div class="legal-contact-grid">
+                    <div class="legal-contact-item">
+                        <span class="legal-contact-icon">📧</span>
+                        <div class="legal-contact-text">
+                            <span class="legal-contact-label">Email Legal</span>
+                            <span class="legal-contact-value">legal@edpsolar.pt</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-contact-item">
+                        <span class="legal-contact-icon">🔒</span>
+                        <div class="legal-contact-text">
+                            <span class="legal-contact-label">Email Privacidade</span>
+                            <span class="legal-contact-value">privacidade@edpsolar.pt</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-contact-item">
+                        <span class="legal-contact-icon">📞</span>
+                        <div class="legal-contact-text">
+                            <span class="legal-contact-label">Telefone</span>
+                            <span class="legal-contact-value">+351 912 345 678</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-contact-item">
+                        <span class="legal-contact-icon">📍</span>
+                        <div class="legal-contact-text">
+                            <span class="legal-contact-label">Morada</span>
+                            <span class="legal-contact-value">[Endereço Completo]</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-contact-item">
+                        <span class="legal-contact-icon">⏱️</span>
+                        <div class="legal-contact-text">
+                            <span class="legal-contact-label">Tempo de Resposta</span>
+                            <span class="legal-contact-value">Até 30 dias (RGPD)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legal-contact-item">
+                        <span class="legal-contact-icon">🆓</span>
+                        <div class="legal-contact-text">
+                            <span class="legal-contact-label">Custo</span>
+                            <span class="legal-contact-value">Gratuito</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Note -->
+            <div class="important-notice">
+                <h3 class="notice-title">Entrada em Vigor</h3>
+                <p class="legal-text">
+                    Estes termos entram em vigor a partir de <strong>23 de Maio de 2025</strong> e aplicam-se 
+                    a todos os utilizadores do website e clientes da EDP Solar Portugal. 
+                    Ao continuar a utilizar os nossos serviços após esta data, concorda com estes termos.
+                </p>
+            </div>
+
+            <!-- Copyright Notice -->
+            <footer style="text-align: center; padding: var(--space-8) 0; border-top: 1px solid var(--border-light); margin-top: var(--space-12); color: var(--medium-text);">
+                <p>&copy; <span class="current-year" id="current-year-terms">2025</span> EDP Solar Portugal, Lda. Todos os direitos reservados.</p>
+                <p style="margin-top: var(--space-2); font-size: var(--text-sm);">
+                    Documento legal vinculativo. Para dúvidas, contacte o nosso departamento jurídico.
+                </p>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Back to Site Button -->
+    <a href="index.html" class="back-to-site" onclick="trackTermsExit()">
+        <span>←</span>
+        <span>Voltar ao Site</span>
+    </a>
+
+    <!-- Scripts -->
     <script>
-        document.getElementById('current-year-terms').textContent = new Date().getFullYear();
+        // Terms Page Analytics and UX
+        class TermsPageOptimizer {
+            constructor() {
+                this.startTime = Date.now();
+                this.sectionsViewed = new Set();
+                this.scrollDepth = 0;
+                this.init();
+            }
+
+            init() {
+                this.updateCurrentYear();
+                this.trackSectionViewing();
+                this.trackReadingBehavior();
+                this.setupSmoothScrolling();
+                this.trackEngagement();
+            }
+
+            updateCurrentYear() {
+                const yearElements = document.querySelectorAll('#current-year-terms, .current-year');
+                const currentYear = new Date().getFullYear();
+                yearElements.forEach(el => {
+                    el.textContent = currentYear;
+                });
+            }
+
+            trackSectionViewing() {
+                const sections = document.querySelectorAll('.legal-section');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+                            const sectionId = entry.target.id || 'unnamed-section';
+                            if (!this.sectionsViewed.has(sectionId)) {
+                                this.sectionsViewed.add(sectionId);
+                                this.trackEvent('terms_section_viewed', { 
+                                    section: sectionId,
+                                    time_to_section: this.getTimeOnPage()
+                                });
+                            }
+                        }
+                    });
+                }, { threshold: [0.3] });
+
+                sections.forEach(section => observer.observe(section));
+            }
+
+            trackReadingBehavior() {
+                // Track scroll depth
+                const trackScroll = this.throttle(() => {
+                    const scrollPercent = Math.round(
+                        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+                    );
+                    
+                    this.scrollDepth = Math.max(this.scrollDepth, scrollPercent);
+                    
+                    // Track reading milestones
+                    if ([25, 50, 75, 100].includes(scrollPercent) && !this.trackedMilestones?.includes(scrollPercent)) {
+                        this.trackedMilestones = this.trackedMilestones || [];
+                        this.trackedMilestones.push(scrollPercent);
+                        this.trackEvent('terms_reading_milestone', { 
+                            milestone: scrollPercent,
+                            time_spent: this.getTimeOnPage()
+                        });
+                    }
+                }, 500);
+
+                window.addEventListener('scroll', trackScroll, { passive: true });
+
+                // Track text selection (indicates careful reading)
+                document.addEventListener('mouseup', () => {
+                    const selection = window.getSelection();
+                    if (selection.toString().length > 15) {
+                        this.trackEvent('terms_text_selected', { 
+                            selection_length: selection.toString().length,
+                            selected_section: this.getCurrentSection()
+                        });
+                    }
+                });
+            }
+
+            setupSmoothScrolling() {
+                // Add smooth scrolling for any internal links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = anchor.getAttribute('href').slice(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            
+                            this.trackEvent('terms_internal_navigation', { 
+                                target_section: targetId 
+                            });
+                        }
+                    });
+                });
+            }
+
+            trackEngagement() {
+                // Track page visibility
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        this.trackEvent('terms_page_hidden', { 
+                            time_visible: this.getTimeOnPage(),
+                            max_scroll: this.scrollDepth,
+                            sections_viewed: this.sectionsViewed.size
+                        });
+                    } else {
+                        this.trackEvent('terms_page_visible');
+                    }
+                });
+
+                // Track engagement on page unload
+                window.addEventListener('beforeunload', () => {
+                    this.trackEvent('terms_page_exit', {
+                        total_time: this.getTimeOnPage(),
+                        max_scroll_depth: this.scrollDepth,
+                        sections_viewed: Array.from(this.sectionsViewed),
+                        completion_percentage: this.calculateCompletionPercentage(),
+                        engagement_quality: this.calculateEngagementQuality()
+                    });
+                });
+
+                // Track print attempts (legal document usage)
+                window.addEventListener('beforeprint', () => {
+                    this.trackEvent('terms_document_printed', {
+                        sections_viewed: Array.from(this.sectionsViewed),
+                        time_before_print: this.getTimeOnPage()
+                    });
+                });
+            }
+
+            getCurrentSection() {
+                const sections = document.querySelectorAll('.legal-section');
+                for (let section of sections) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                        return section.id || section.querySelector('.legal-title')?.textContent || 'unknown';
+                    }
+                }
+                return 'unknown';
+            }
+
+            calculateCompletionPercentage() {
+                const totalSections = document.querySelectorAll('.legal-section').length;
+                return Math.round((this.sectionsViewed.size / totalSections) * 100);
+            }
+
+            calculateEngagementQuality() {
+                const timeScore = Math.min(100, (this.getTimeOnPage() / 600) * 100); // Max 10 minutes
+                const scrollScore = this.scrollDepth;
+                const completionScore = this.calculateCompletionPercentage();
+                
+                return Math.round((timeScore * 0.3) + (scrollScore * 0.3) + (completionScore * 0.4));
+            }
+
+            getTimeOnPage() {
+                return Math.round((Date.now() - this.startTime) / 1000);
+            }
+
+            trackEvent(eventName, data = {}) {
+                const eventData = {
+                    event: eventName,
+                    page: 'terms_and_gdpr',
+                    timestamp: Date.now(),
+                    time_on_page: this.getTimeOnPage(),
+                    ...data
+                };
+
+                // Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', eventName, data);
+                }
+
+                // Meta Pixel
+                if (typeof fbq !== 'undefined') {
+                    fbq('trackCustom', eventName, data);
+                }
+
+                console.log('Terms Event:', eventData);
+            }
+
+            throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                };
+            }
+        }
+
+        // Global tracking function for exit
+        function trackTermsExit() {
+            if (window.termsOptimizer) {
+                window.termsOptimizer.trackEvent('terms_back_to_site_clicked', {
+                    final_engagement_score: window.termsOptimizer.calculateEngagementQuality(),
+                    completion_percentage: window.termsOptimizer.calculateCompletionPercentage()
+                });
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.termsOptimizer = new TermsPageOptimizer();
+        });
+
+        // GDPR Contact Functions
+        function contactGDPR(method) {
+            if (window.termsOptimizer) {
+                window.termsOptimizer.trackEvent('gdpr_contact_initiated', { 
+                    method: method,
+                    source: 'terms_page'
+                });
+            }
+            
+            if (method === 'email') {
+                const subject = 'Exercício de Direitos RGPD';
+                const body = `Olá,
+
+Gostaria de exercer os meus direitos RGPD.
+
+Dados para identificação:
+Nome: 
+Telemóvel: 
+Email: 
+
+Direito que pretendo exercer:
+☐ Acesso aos meus dados
+☐ Retificação de dados
+☐ Apagamento de dados
+☐ Limitação do tratamento
+☐ Portabilidade de dados
+☐ Oposição ao tratamento
+☐ Retirada de consentimento
+
+Detalhes do pedido:
+[Descreva aqui o que pretende]
+
+Obrigado,
+[Seu Nome]`;
+
+                window.location.href = `mailto:privacidade@edpsolar.pt?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            }
+        }
+
+        // Print functionality
+        function printTerms() {
+            window.print();
+            if (window.termsOptimizer) {
+                window.termsOptimizer.trackEvent('terms_document_print_requested');
+            }
+        }
     </script>
 </body>
 </html>

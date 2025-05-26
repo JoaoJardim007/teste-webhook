@@ -1,0 +1,42 @@
+[
+    {
+        "id": "EDP-20250525-ADE857D8",
+        "data": {
+            "nome": "Jo\u00e3o Pedro Jardim",
+            "telefone": "994646842",
+            "email": "joaopgrj@gmail.com",
+            "privacy_policy": true,
+            "timestamp": "2025-05-25T15:54:52.579Z",
+            "page_url": "https:\/\/automatizesolucoes.com\/",
+            "fbc": "fb.1.1742505454.fbclid",
+            "fbp": "fb.1.1742505454899.556819592",
+            "lead_score": 318,
+            "time_on_page": 123989,
+            "scroll_depth": 96,
+            "interactions": 46,
+            "user_agent": "Mozilla\/5.0 (X11; Linux x86_64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/136.0.0.0 Safari\/537.36",
+            "screen_resolution": "2560x1080",
+            "referrer": "direct",
+            "utm_source": "",
+            "utm_medium": "",
+            "utm_campaign": ""
+        },
+        "timestamp": 1748188493,
+        "ip": "179.216.21.90",
+        "processing_results": {
+            "meta_pixel": {
+                "status": "success",
+                "event_id": "lead_1748188492_53ed7e4c",
+                "response_code": 200,
+                "events_received": 1
+            },
+            "webhook": {
+                "status": "success",
+                "response_code": 200,
+                "response_time": 472.84
+            },
+            "crm": "not_configured",
+            "email": "success"
+        }
+    }
+]
