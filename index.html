@@ -109,10 +109,6 @@
 
             <!-- Hero Content -->
             <div class="hero-content-new">
-                <div class="hero-icon">
-                    <div class="solar-icon">🏠⚡</div>
-                </div>
-                
                 <h1 class="hero-title-new">
                     <span class="hero-hook-new">Já Percebeu que na Casa dos Ricos Há Painéis Solares?</span>
                 </h1>
@@ -207,33 +203,46 @@
                 </div>
                 
                 <!-- Resultados -->
-                <div class="results-container">
-                    <!-- Economia 1º Ano -->
-                    <div class="result-card primeiro-ano">
-                        <div class="result-header">
-                            <span class="result-icon">📊</span>
-                            <span class="result-period">Economia no 1º ano:</span>
-                        </div>
-                        <div class="result-value">
-                            <span class="currency-small">€</span>
-                            <span id="first-year-saving">540,00</span>
-                        </div>
-                        <div class="result-detail">30% de economia mensal</div>
-                    </div>
-                    
-                    <!-- Economia após 5 anos -->
-                    <div class="result-card cinco-anos">
-                        <div class="result-header">
-                            <span class="result-icon">🚀</span>
-                            <span class="result-period">Economia após 5 anos:</span>
-                        </div>
-                        <div class="result-value">
-                            <span class="currency-small">€</span>
-                            <span id="five-year-saving">1.260,00</span>
-                        </div>
-                        <div class="result-detail">70% de economia mensal</div>
-                    </div>
-                </div>
+<div class="results-container">
+    <!-- Economia 1º Ano -->
+    <div class="result-card primeiro-ano">
+        <div class="result-header">
+            <span class="result-icon">📊</span>
+            <span class="result-period">Economia por ano:</span>
+        </div>
+        <div class="result-value">
+            <span class="currency-small">€</span>
+            <span id="first-year-saving">540</span>
+            <span class="per-year">/ano</span>
+        </div>
+        <div class="result-detail">30% de economia mensal</div>
+    </div>
+    
+    <!-- Economia após 5 anos -->
+    <div class="result-card cinco-anos">
+        <div class="result-header">
+            <span class="result-icon">🚀</span>
+            <span class="result-period">Economia por ano (após 5 anos):</span>
+        </div>
+        <div class="result-value">
+            <span class="currency-small">€</span>
+            <span id="five-year-saving">1.260</span>
+            <span class="per-year">/ano</span>
+        </div>
+        <div class="result-detail">70% de economia mensal</div>
+    </div>
+</div>
+
+<!-- Economia Total em 10 Anos -->
+<div class="total-savings-container">
+    <div class="total-savings-card">
+        <div class="total-icon">💰</div>
+        <div class="total-text">
+            <span class="total-label">Economia total em 10 anos:</span>
+            <span class="total-value">€<span id="total-ten-years">0</span></span>
+        </div>
+    </div>
+</div>
                 
                 <!-- Botão CTA -->
                 <button class="simulator-cta" onclick="contactCesar()">

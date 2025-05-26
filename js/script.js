@@ -102,48 +102,82 @@ class CesarJardimTracker {
     }
 
     updateSimulatorValues(monthlyBill) {
-        const valueDisplay = document.getElementById('bill-value-display');
-        const firstYearSaving = document.getElementById('first-year-saving');
-        const fiveYearSaving = document.getElementById('five-year-saving');
-        const slider = document.getElementById('bill-slider');
-        
-        if (!valueDisplay) return;
+    const valueDisplay = document.getElementById('bill-value-display');
+    const firstYearSaving = document.getElementById('first-year-saving');
+    const fiveYearSaving = document.getElementById('five-year-saving');
+    const totalTenYears = document.getElementById('total-ten-years');
+    const slider = document.getElementById('bill-slider');
+    
+    if (!valueDisplay) return;
 
-        // Update display with animation
-        valueDisplay.textContent = this.formatCurrency(monthlyBill);
-        valueDisplay.classList.add('value-updating');
-        setTimeout(() => {
-            valueDisplay.classList.remove('value-updating');
-        }, 300);
+    // Update display with animation
+    valueDisplay.textContent = this.formatCurrency(monthlyBill);
+    valueDisplay.classList.add('value-updating');
+    setTimeout(() => {
+        valueDisplay.classList.remove('value-updating');
+    }, 300);
+    
+    // Calculate savings (corrigido)
+    const firstYearMonthlySaving = monthlyBill * 0.30; // 30%
+    const fiveYearMonthlySaving = monthlyBill * 0.70;  // 70%
+    
+    const firstYearTotal = Math.round(firstYearMonthlySaving * 12);
+    const fiveYearTotal = Math.round(fiveYearMonthlySaving * 12);
+    
+    // Cálculo da economia total em 10 anos
+    // Primeiros 5 anos com 30%, próximos 5 anos com 70%
+    const totalTenYearsValue = Math.round((firstYearTotal * 5) + (fiveYearTotal * 5));
+    
+    // Update displays with animation (números inteiros)
+    if (firstYearSaving) this.animateValueInteger(firstYearSaving, firstYearTotal);
+    if (fiveYearSaving) this.animateValueInteger(fiveYearSaving, fiveYearTotal);
+    if (totalTenYears) this.animateValueInteger(totalTenYears, totalTenYearsValue);
+    
+    // Update slider background
+    if (slider) this.updateSliderBackground(slider);
+    
+    // Store values for WhatsApp
+    this.simulatorData = {
+        monthlyBill,
+        firstYearSaving: firstYearTotal,
+        fiveYearSaving: fiveYearTotal,
+        totalTenYears: totalTenYearsValue
+    };
+}
+
+    animateValueInteger(element, targetValue) {
+    const startValue = parseInt(element.textContent.replace(/[^\d]/g, '')) || 0;
+    const duration = 500;
+    const startTime = performance.now();
+    
+    const animate = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
         
-        // Calculate savings
-        const firstYearMonthlySaving = monthlyBill * 0.30; // 30%
-        const fiveYearMonthlySaving = monthlyBill * 0.70;  // 70%
+        // Easing function
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.round(startValue + (targetValue - startValue) * easeOut);
         
-        const firstYearTotal = firstYearMonthlySaving * 12;
-        const fiveYearTotal = fiveYearMonthlySaving * 12;
+        // Formatação sem casas decimais para números inteiros
+        element.textContent = new Intl.NumberFormat('pt-PT', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(currentValue);
         
-        // Update displays with animation
-        if (firstYearSaving) this.animateValue(firstYearSaving, firstYearTotal);
-        if (fiveYearSaving) this.animateValue(fiveYearSaving, fiveYearTotal);
-        
-        // Update slider background
-        if (slider) this.updateSliderBackground(slider);
-        
-        // Store values for WhatsApp
-        this.simulatorData = {
-            monthlyBill,
-            firstYearSaving: firstYearTotal,
-            fiveYearSaving: fiveYearTotal
-        };
-    }
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    };
+    
+    requestAnimationFrame(animate);
+}
 
     formatCurrency(value) {
-        return new Intl.NumberFormat('pt-PT', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        }).format(value);
-    }
+    return new Intl.NumberFormat('pt-PT', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(Math.round(value));
+}
 
     animateValue(element, targetValue) {
         const startValue = parseFloat(element.textContent.replace(/[^\d.-]/g, '')) || 0;
@@ -948,12 +982,14 @@ function contactCesar() {
     const monthlyBill = document.getElementById('bill-slider')?.value || 150;
     const firstYearSaving = document.getElementById('first-year-saving')?.textContent || '0';
     const fiveYearSaving = document.getElementById('five-year-saving')?.textContent || '0';
+    const totalTenYears = document.getElementById('total-ten-years')?.textContent || '0';
     
     const message = `Olá Cesar! 
 
 Vi no simulador que posso economizar:
-- 1º ano: €${firstYearSaving} por ano
-- Após 5 anos: €${fiveYearSaving} por ano
+- Por ano (primeiros 5 anos): €${firstYearSaving}
+- Por ano (após 5 anos): €${fiveYearSaving}
+- Total em 10 anos: €${totalTenYears}
 
 Minha conta atual é de €${monthlyBill}/mês.
 
@@ -967,7 +1003,8 @@ Quero saber mais sobre a instalação gratuita na minha região!`;
         window.cesarTracker.trackEvent('simulator_contact', {
             monthly_bill: monthlyBill,
             first_year_saving: firstYearSaving,
-            five_year_saving: fiveYearSaving
+            five_year_saving: fiveYearSaving,
+            total_ten_years: totalTenYears
         });
     }
 }

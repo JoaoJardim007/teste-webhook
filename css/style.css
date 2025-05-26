@@ -2501,3 +2501,104 @@ a:focus {
         page-break-inside: avoid;
     }
 }
+
+
+
+/* Economia por ano indicator */
+.per-year {
+    font-size: 0.8rem;
+    color: #718096;
+    font-weight: 500;
+    margin-left: 4px;
+}
+
+/* Economia Total Container */
+.total-savings-container {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.total-savings-card {
+    background: linear-gradient(135deg, #00B894, #00CEC9);
+    color: white;
+    border-radius: 16px;
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    box-shadow: 0 8px 30px rgba(0, 184, 148, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.total-savings-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="20" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    background-size: 40px 40px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.total-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    z-index: 1;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.total-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1;
+}
+
+.total-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.total-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: 'Inter', monospace;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .total-savings-card {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
+    }
+    
+    .total-icon {
+        font-size: 1.5rem;
+    }
+    
+    .total-value {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animation for updating values */
+.value-updating {
+    animation: pulse-value 0.3s ease;
+}
+
+@keyframes pulse-value {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
