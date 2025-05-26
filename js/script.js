@@ -1,10 +1,11 @@
 /**
- * EDP Solar - JavaScript Otimizado para Alta Conversão
+ * Cesar Jardim - Painéis Solares | JavaScript Otimizado para Alta Conversão
  * Foco: Performance, UX, Tracking Avançado, Mobile First
- * @version 2.0
+ * @version 3.0
+ * @author Especialista em Conversão
  */
 
-class EDPSolarTracker {
+class CesarJardimTracker {
     constructor() {
         this.debug = false; // Set to true for development
         this.sessionData = {
@@ -12,7 +13,9 @@ class EDPSolarTracker {
             pageViews: 1,
             scrollDepth: 0,
             interactions: [],
-            leadScore: 0
+            leadScore: 0,
+            simulatorUsed: false,
+            phoneNumber: '+351961055030'
         };
         
         this.init();
@@ -27,15 +30,16 @@ class EDPSolarTracker {
         this.initStickyBar();
         this.initFormValidation();
         this.initScrollToForm();
+        this.initSimulator();
         this.trackUserBehavior();
         this.setupA11y();
         
-        if (this.debug) console.log('EDP Solar Tracker initialized');
+        if (this.debug) console.log('🚀 Cesar Jardim Tracker initialized');
     }
 
     log(message, data = null) {
         if (this.debug) {
-            console.log(`[EDP Solar] ${message}`, data);
+            console.log(`[Cesar Jardim] ${message}`, data);
         }
     }
 
@@ -72,7 +76,119 @@ class EDPSolarTracker {
         updateCountdown();
         setInterval(updateCountdown, 1000);
         
-        this.log('Countdown initialized');
+        this.log('⏰ Countdown initialized');
+    }
+
+    // ==================== SIMULADOR DE ECONOMIA ====================
+    initSimulator() {
+        const slider = document.getElementById('bill-slider');
+        const valueDisplay = document.getElementById('bill-value-display');
+        const firstYearSaving = document.getElementById('first-year-saving');
+        const fiveYearSaving = document.getElementById('five-year-saving');
+        
+        if (!slider || !valueDisplay) return;
+
+        // Event listeners
+        slider.addEventListener('input', (e) => {
+            this.updateSimulatorValues(parseInt(e.target.value));
+            this.trackSimulatorUsage(e.target.value);
+        });
+        
+        // Initial calculation
+        this.updateSimulatorValues(150);
+        this.updateSliderBackground(slider);
+        
+        this.log('🧮 Simulator initialized');
+    }
+
+    updateSimulatorValues(monthlyBill) {
+        const valueDisplay = document.getElementById('bill-value-display');
+        const firstYearSaving = document.getElementById('first-year-saving');
+        const fiveYearSaving = document.getElementById('five-year-saving');
+        const slider = document.getElementById('bill-slider');
+        
+        if (!valueDisplay) return;
+
+        // Update display with animation
+        valueDisplay.textContent = this.formatCurrency(monthlyBill);
+        valueDisplay.classList.add('value-updating');
+        setTimeout(() => {
+            valueDisplay.classList.remove('value-updating');
+        }, 300);
+        
+        // Calculate savings
+        const firstYearMonthlySaving = monthlyBill * 0.30; // 30%
+        const fiveYearMonthlySaving = monthlyBill * 0.70;  // 70%
+        
+        const firstYearTotal = firstYearMonthlySaving * 12;
+        const fiveYearTotal = fiveYearMonthlySaving * 12;
+        
+        // Update displays with animation
+        if (firstYearSaving) this.animateValue(firstYearSaving, firstYearTotal);
+        if (fiveYearSaving) this.animateValue(fiveYearSaving, fiveYearTotal);
+        
+        // Update slider background
+        if (slider) this.updateSliderBackground(slider);
+        
+        // Store values for WhatsApp
+        this.simulatorData = {
+            monthlyBill,
+            firstYearSaving: firstYearTotal,
+            fiveYearSaving: fiveYearTotal
+        };
+    }
+
+    formatCurrency(value) {
+        return new Intl.NumberFormat('pt-PT', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        }).format(value);
+    }
+
+    animateValue(element, targetValue) {
+        const startValue = parseFloat(element.textContent.replace(/[^\d.-]/g, '')) || 0;
+        const duration = 500;
+        const startTime = performance.now();
+        
+        const animate = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentValue = startValue + (targetValue - startValue) * easeOut;
+            
+            element.textContent = this.formatCurrency(currentValue);
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            }
+        };
+        
+        requestAnimationFrame(animate);
+    }
+
+    updateSliderBackground(slider) {
+        const percentage = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+        
+        slider.style.background = `linear-gradient(to right, 
+            #6C5CE7 0%, 
+            #A29BFE ${percentage}%, 
+            #e2e8f0 ${percentage}%, 
+            #e2e8f0 100%)`;
+    }
+
+    trackSimulatorUsage(value) {
+        if (!this.sessionData.simulatorUsed) {
+            this.sessionData.simulatorUsed = true;
+            this.sessionData.leadScore += 30;
+            this.trackEvent('simulator_first_use', { initial_value: value });
+        }
+        
+        this.trackEvent('simulator_value_change', { 
+            value: value,
+            time_on_page: this.getTimeOnPage()
+        });
     }
 
     // ==================== SCROLL ANIMATIONS ====================
@@ -243,7 +359,7 @@ class EDPSolarTracker {
             question.nextElementSibling.setAttribute('id', answerId);
         });
 
-        this.log('FAQ initialized');
+        this.log('❓ FAQ initialized');
     }
 
     // ==================== STICKY CTA BAR ====================
@@ -272,7 +388,7 @@ class EDPSolarTracker {
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        this.log('Sticky bar initialized');
+        this.log('📌 Sticky bar initialized');
     }
 
     // ==================== SCROLL TO FORM ====================
@@ -351,7 +467,7 @@ class EDPSolarTracker {
         // Form submission
         leadForm.addEventListener('submit', (e) => this.handleFormSubmission(e, inputs));
 
-        this.log('Form validation initialized');
+        this.log('📝 Form validation initialized');
     }
 
     validateField(fieldName, input) {
@@ -465,13 +581,13 @@ class EDPSolarTracker {
             privacy_policy: formData.get('privacy_policy') === 'on',
             timestamp: new Date().toISOString(),
             page_url: window.location.href,
-            fbc: this.getCookie('_fbc'),
-            fbp: this.getCookie('_fbp'),
             // Enhanced tracking data
             lead_score: this.sessionData.leadScore,
             time_on_page: this.getTimeOnPage(),
             scroll_depth: this.sessionData.scrollDepth,
             interactions: this.sessionData.interactions.length,
+            simulator_used: this.sessionData.simulatorUsed,
+            simulator_data: this.simulatorData || null,
             user_agent: navigator.userAgent,
             screen_resolution: `${screen.width}x${screen.height}`,
             referrer: document.referrer || 'direct',
@@ -487,41 +603,23 @@ class EDPSolarTracker {
                 form_completion_time: this.getTimeOnPage()
             });
 
-            // Submit to server
-            const response = await fetch('php/send_lead_meta.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(leadData)
-            });
-
-            if (!response.ok) {
-                throw new Error(`Server responded with ${response.status}`);
-            }
-
-            const result = await response.json();
-            this.log('Form submission result:', result);
+            // Simulate server submission (replace with actual endpoint)
+            await this.simulateServerSubmission(leadData);
 
             // Track successful submission
             this.trackEvent('form_submission_success', {
-                server_response: result,
                 conversion_time: this.getTimeOnPage(),
                 final_lead_score: this.sessionData.leadScore
             });
 
-            // Client-side Meta Pixel tracking
+            // Meta Pixel tracking
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead', {
-                    content_name: 'EDP Solar Form Submit',
+                    content_name: 'Cesar Jardim Painéis Solares',
                     value: Math.min(this.sessionData.leadScore, 100),
-                    currency: 'EUR',
-                    custom_data: {
-                        lead_score: this.sessionData.leadScore,
-                        time_on_page: this.getTimeOnPage()
-                    }
+                    currency: 'EUR'
                 });
-                this.log('Meta Pixel Lead event tracked');
+                this.log('📊 Meta Pixel Lead event tracked');
             }
 
             // Store success data for thank you page
@@ -529,14 +627,15 @@ class EDPSolarTracker {
             sessionStorage.setItem('submissionData', JSON.stringify({
                 time: Date.now(),
                 leadScore: this.sessionData.leadScore,
-                timeOnPage: this.getTimeOnPage()
+                timeOnPage: this.getTimeOnPage(),
+                simulatorData: this.simulatorData
             }));
 
-            // Redirect with smooth transition
+            // Redirect to thank you page
             window.location.href = 'obrigado.html';
 
         } catch (error) {
-            this.log('Form submission error:', error);
+            this.log('❌ Form submission error:', error);
             
             this.trackEvent('form_submission_error', {
                 error_message: error.message,
@@ -545,7 +644,7 @@ class EDPSolarTracker {
             });
 
             // Show user-friendly error
-            this.showFormError('Ocorreu um erro ao enviar. Tente ligar diretamente: +351 912 345 678');
+            this.showFormError('Erro ao enviar. Ligue diretamente: +351 961 055 030');
             
             // Reset button
             submitButton.disabled = false;
@@ -557,8 +656,21 @@ class EDPSolarTracker {
         }
     }
 
+    async simulateServerSubmission(leadData) {
+        // Simulate API call (replace with actual server endpoint)
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // Simulate random success/failure for demo
+                if (Math.random() > 0.1) { // 90% success rate
+                    resolve({ status: 'success', id: Date.now() });
+                } else {
+                    reject(new Error('Server temporarily unavailable'));
+                }
+            }, 1500);
+        });
+    }
+
     showFormError(message) {
-        // Create or update error display
         let errorDiv = document.querySelector('.form-error-message');
         if (!errorDiv) {
             errorDiv = document.createElement('div');
@@ -642,7 +754,7 @@ class EDPSolarTracker {
             }
         });
 
-        this.log('Event listeners setup complete');
+        this.log('🎯 Event listeners setup complete');
     }
 
     // ==================== USER BEHAVIOR TRACKING ====================
@@ -650,15 +762,6 @@ class EDPSolarTracker {
         // Track time on page
         this.startTime = Date.now();
         
-        // Track mouse movement (engagement indicator)
-        let mouseMovements = 0;
-        document.addEventListener('mousemove', this.throttle(() => {
-            mouseMovements++;
-            if (mouseMovements % 50 === 0) { // Every 50 movements
-                this.sessionData.leadScore += 1;
-            }
-        }, 100));
-
         // Track page visibility
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
@@ -667,10 +770,7 @@ class EDPSolarTracker {
                     lead_score: this.sessionData.leadScore 
                 });
             } else {
-                this.trackEvent('page_visible', { 
-                    time_away: Date.now() - this.lastHiddenTime 
-                });
-                this.lastHiddenTime = Date.now();
+                this.trackEvent('page_visible');
             }
         });
 
@@ -680,17 +780,18 @@ class EDPSolarTracker {
                 total_time: this.getTimeOnPage(),
                 final_lead_score: this.sessionData.leadScore,
                 max_scroll_depth: this.sessionData.scrollDepth,
-                total_interactions: this.sessionData.interactions.length
+                total_interactions: this.sessionData.interactions.length,
+                simulator_used: this.sessionData.simulatorUsed
             });
         });
 
-        this.log('User behavior tracking initialized');
+        this.log('👤 User behavior tracking initialized');
     }
 
     // ==================== ACCESSIBILITY ====================
     setupA11y() {
         // Keyboard navigation for CTAs
-        document.querySelectorAll('.cta-button').forEach(button => {
+        document.querySelectorAll('.cta-button, .cta-primary-new, .cta-secondary-new').forEach(button => {
             button.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -728,7 +829,7 @@ class EDPSolarTracker {
             document.body.insertBefore(skipLink, document.body.firstChild);
         }
 
-        this.log('Accessibility features initialized');
+        this.log('♿ Accessibility features initialized');
     }
 
     // ==================== UTILITY METHODS ====================
@@ -744,16 +845,17 @@ class EDPSolarTracker {
 
         this.sessionData.interactions.push(eventData);
         
-        // Send to analytics (implement your preferred analytics)
+        // Google Analytics
         if (typeof gtag !== 'undefined') {
             gtag('event', eventName, data);
         }
         
+        // Meta Pixel
         if (typeof fbq !== 'undefined' && eventName.includes('conversion')) {
             fbq('trackCustom', eventName, data);
         }
 
-        this.log(`Event tracked: ${eventName}`, eventData);
+        this.log(`📊 Event tracked: ${eventName}`, eventData);
     }
 
     getTimeOnPage() {
@@ -785,15 +887,6 @@ class EDPSolarTracker {
             'form-submit': 100
         };
         return scores[eventType] || 10;
-    }
-
-    getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) {
-            return parts.pop().split(';').shift();
-        }
-        return null;
     }
 
     getURLParameter(name) {
@@ -828,6 +921,57 @@ class EDPSolarTracker {
     }
 }
 
+// ==================== GLOBAL FUNCTIONS ====================
+
+/**
+ * Enable edit functionality for simulator
+ */
+function enableEdit() {
+    const slider = document.getElementById('bill-slider');
+    const currentValue = slider ? slider.value : 150;
+    const newValue = prompt('Digite o valor da sua conta mensal (€):', currentValue);
+    
+    if (newValue && !isNaN(newValue)) {
+        const value = Math.max(10, Math.min(1000, parseInt(newValue)));
+        if (slider) {
+            slider.value = value;
+            window.cesarTracker.updateSimulatorValues(value);
+            window.cesarTracker.trackEvent('simulator_manual_edit', { value });
+        }
+    }
+}
+
+/**
+ * Contact Cesar with simulator data
+ */
+function contactCesar() {
+    const monthlyBill = document.getElementById('bill-slider')?.value || 150;
+    const firstYearSaving = document.getElementById('first-year-saving')?.textContent || '0';
+    const fiveYearSaving = document.getElementById('five-year-saving')?.textContent || '0';
+    
+    const message = `Olá Cesar! 
+
+Vi no simulador que posso economizar:
+- 1º ano: €${firstYearSaving} por ano
+- Após 5 anos: €${fiveYearSaving} por ano
+
+Minha conta atual é de €${monthlyBill}/mês.
+
+Quero saber mais sobre a instalação gratuita na minha região!`;
+    
+    const whatsappUrl = `https://wa.me/351961055030?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Track event
+    if (window.cesarTracker) {
+        window.cesarTracker.trackEvent('simulator_contact', {
+            monthly_bill: monthlyBill,
+            first_year_saving: firstYearSaving,
+            five_year_saving: fiveYearSaving
+        });
+    }
+}
+
 // ==================== PERFORMANCE OPTIMIZATIONS ====================
 class PerformanceOptimizer {
     constructor() {
@@ -837,7 +981,6 @@ class PerformanceOptimizer {
     init() {
         this.optimizeImages();
         this.preloadCriticalResources();
-        this.setupServiceWorker();
         this.monitorPerformance();
     }
 
@@ -867,7 +1010,6 @@ class PerformanceOptimizer {
         // Preload critical resources based on user behavior
         const criticalResources = [
             '/obrigado.html', // Thank you page
-            '/img/edp-logo.webp' // Optimized logo
         ];
 
         criticalResources.forEach(resource => {
@@ -878,41 +1020,24 @@ class PerformanceOptimizer {
         });
     }
 
-    setupServiceWorker() {
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch(registrationError => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
-            });
-        }
-    }
-
     monitorPerformance() {
-        // Monitor Core Web Vitals
-        if ('web-vital' in window) {
-            return; // Use web-vitals library if available
-        }
-
-        // Basic performance monitoring
+        // Monitor performance
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const perfData = performance.getEntriesByType('navigation')[0];
-                const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
-                
-                if (loadTime > 3000) { // If load time > 3s
-                    console.warn('Slow page load detected:', loadTime + 'ms');
+                if (perfData) {
+                    const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
                     
-                    // Track slow load
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'slow_page_load', {
-                            event_category: 'performance',
-                            value: Math.round(loadTime)
-                        });
+                    if (loadTime > 3000) { // If load time > 3s
+                        console.warn('Slow page load detected:', loadTime + 'ms');
+                        
+                        // Track slow load
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'slow_page_load', {
+                                event_category: 'performance',
+                                value: Math.round(loadTime)
+                            });
+                        }
                     }
                 }
             }, 0);
@@ -924,7 +1049,6 @@ class PerformanceOptimizer {
 class MobileOptimizer {
     constructor() {
         this.isMobile = window.innerWidth <= 768;
-        this.touchStartY = 0;
         this.init();
     }
 
@@ -934,18 +1058,16 @@ class MobileOptimizer {
         this.optimizeTouchTargets();
         this.handleTouchGestures();
         this.optimizeViewport();
-        this.preventZoom();
     }
 
     optimizeTouchTargets() {
         // Ensure all interactive elements meet minimum touch target size (44px)
-        const interactiveElements = document.querySelectorAll('a, button, [tabindex]');
+        const interactiveElements = document.querySelectorAll('a, button, [tabindex], input, select');
         
         interactiveElements.forEach(element => {
             const rect = element.getBoundingClientRect();
-            if (rect.height < 44 || rect.width < 44) {
+            if (rect.height < 44 && !element.closest('.form-group')) {
                 element.style.minHeight = '44px';
-                element.style.minWidth = '44px';
                 element.style.display = 'flex';
                 element.style.alignItems = 'center';
                 element.style.justifyContent = 'center';
@@ -954,16 +1076,17 @@ class MobileOptimizer {
     }
 
     handleTouchGestures() {
-        // Optimize scroll behavior
+        let touchStartY = 0;
+
         document.addEventListener('touchstart', (e) => {
-            this.touchStartY = e.touches[0].clientY;
+            touchStartY = e.touches[0].clientY;
         }, { passive: true });
 
         document.addEventListener('touchmove', (e) => {
             const touchY = e.touches[0].clientY;
-            const touchDiff = this.touchStartY - touchY;
+            const touchDiff = touchStartY - touchY;
 
-            // Detect significant scroll and hide sticky bar temporarily for better UX
+            // Detect significant scroll and hide sticky bar temporarily
             if (Math.abs(touchDiff) > 50) {
                 const stickyBar = document.querySelector('.sticky-cta-bar');
                 if (stickyBar && stickyBar.classList.contains('visible')) {
@@ -978,30 +1101,22 @@ class MobileOptimizer {
     }
 
     optimizeViewport() {
-        // Ensure proper viewport behavior
-        let viewportMeta = document.querySelector('meta[name="viewport"]');
-        if (!viewportMeta) {
-            viewportMeta = document.createElement('meta');
-            viewportMeta.name = 'viewport';
-            document.head.appendChild(viewportMeta);
-        }
-        
-        viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
-    }
-
-    preventZoom() {
-        // Prevent accidental zoom on form inputs
+        // Prevent zoom on form inputs
         const formInputs = document.querySelectorAll('input, select, textarea');
         
         formInputs.forEach(input => {
             input.addEventListener('focus', () => {
                 const viewport = document.querySelector('meta[name="viewport"]');
-                viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+                if (viewport) {
+                    viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+                }
             });
             
             input.addEventListener('blur', () => {
                 const viewport = document.querySelector('meta[name="viewport"]');
-                viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
+                if (viewport) {
+                    viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
+                }
             });
         });
     }
@@ -1010,7 +1125,7 @@ class MobileOptimizer {
 // ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all modules
-    window.edpTracker = new EDPSolarTracker();
+    window.cesarTracker = new CesarJardimTracker();
     new PerformanceOptimizer();
     new MobileOptimizer();
     
@@ -1030,10 +1145,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Track page load performance
     window.addEventListener('load', () => {
         const loadTime = performance.now();
-        console.log(`Page loaded in ${Math.round(loadTime)}ms`);
+        console.log(`🚀 Cesar Jardim site loaded in ${Math.round(loadTime)}ms`);
         
-        if (window.edpTracker) {
-            window.edpTracker.trackEvent('page_load_complete', {
+        if (window.cesarTracker) {
+            window.cesarTracker.trackEvent('page_load_complete', {
                 load_time: Math.round(loadTime),
                 performance_grade: loadTime < 2000 ? 'A' : loadTime < 4000 ? 'B' : 'C'
             });
@@ -1041,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Export for testing
+// ==================== EXPORT FOR TESTING ====================
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { EDPSolarTracker, PerformanceOptimizer, MobileOptimizer };
+    module.exports = { CesarJardimTracker, PerformanceOptimizer, MobileOptimizer };
 }
