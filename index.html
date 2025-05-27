@@ -75,783 +75,453 @@
 </head>
 <body>
 
-    <!-- URGENT BANNER -->
-    <div class="urgent-banner" role="banner" aria-label="Oferta limitada">
+    <!-- URGENT BANNER COMPACTO -->
+    <div class="urgent-banner-mobile" role="banner" aria-label="Oferta limitada">
         <div class="container">
-            <div class="urgent-content">
-                <p class="urgent-text">
+            <div class="urgent-content-mobile">
+                <div class="urgent-text-mobile">
                     <span class="urgent-icon">🚨</span>
-                    <strong>ÚLTIMAS VAGAS DO MÊS!</strong> Instalação GRATUITA + Sem Entrada + Sem Juros!
-                    <span class="urgent-icon">🚨</span>
-                </p>
-                <div class="countdown-container">
-                    <span class="countdown-label">Termina em:</span>
-                    <div class="countdown" aria-live="polite">
-                        <span id="timer">23:59:59</span>
-                    </div>
+                    <strong>ÚLTIMAS VAGAS!</strong> Instalação GRATUITA
+                </div>
+                <div class="countdown-mobile">
+                    <span id="timer">23:59</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- HERO SECTION -->
-    <header class="hero-new" role="main">
+    <!-- HERO SECTION COMPACTO -->
+    <header class="hero-mobile" role="main">
         <div class="container">
-            <!-- Logo EDP -->
-            <div class="hero-brand">
+            <!-- Logo EDP Compacto -->
+            <div class="hero-brand-mobile">
                 <img src="https://logodownload.org/wp-content/uploads/2017/08/edp-logo-1.png" 
                      alt="EDP Solar" 
-                     class="edp-logo-new" 
-                     width="120" 
-                     height="40"
+                     class="edp-logo-mobile" 
+                     width="80" 
+                     height="26"
                      loading="eager">
             </div>
 
-            <!-- Hero Content -->
-            <div class="hero-content-new">
-                <h1 class="hero-title-new">
-                    <span class="hero-hook-new">Já Percebeu que na Casa dos Ricos Há Painéis Solares?</span>
+            <!-- Hero Content Otimizado -->
+            <div class="hero-content-mobile">
+                <h1 class="hero-title-mobile">
+                    Já Percebeu que na Casa dos Ricos Há <span class="highlight-text">Painéis Solares?</span>
                 </h1>
                 
-                <div class="hero-benefits-new">
-                    <div class="benefit-highlight">
-                        <span class="benefit-number">Até 30%</span>
+                <!-- Benefícios Compactos -->
+                <div class="hero-benefits-mobile">
+                    <div class="benefit-item-mobile">
+                        <span class="benefit-number">30%</span>
                         <span class="benefit-text">economia no 1º mês</span>
                     </div>
-                    <div class="benefit-highlight">
-                        <span class="benefit-number">Até 70%</span>
+                    <div class="benefit-item-mobile">
+                        <span class="benefit-number">70%</span>
                         <span class="benefit-text">economia total</span>
                     </div>
                 </div>
 
-                <p class="hero-subtitle-new">
-                    Instalação <strong>totalmente gratuita</strong> • Parcele em <strong>até 96 meses</strong> 
-                    sem entrada • <strong>25 anos de garantia</strong>
-                </p>
-
-                <!-- CTAs na primeira dobra -->
-                <div class="hero-ctas-new">
+                <!-- CTA Principal Única -->
+                <div class="hero-cta-mobile">
                     <a href="tel:+351961055030" 
-                       class="cta-primary-new"
+                       class="cta-primary-mobile"
                        data-event="hero-phone-click"
                        aria-label="Ligar para Cesar Jardim">
-                        <span class="cta-icon-new">📞</span>
-                        <div class="cta-text-new">
-                            <strong>Ligar para Cesar</strong>
-                            <small>Atendimento imediato</small>
-                        </div>
-                    </a>
-                    
-                    <a href="https://wa.me/351961055030?text=Olá%20Cesar!%20Vi%20no%20site%20sobre%20os%20painéis%20solares%20e%20quero%20saber%20mais%20sobre%20como%20economizar%20na%20conta%20de%20luz%20aqui%20na%20minha%20região!" 
-                       target="_blank"
-                       class="cta-secondary-new"
-                       data-event="hero-whatsapp-click"
-                       aria-label="Conversar no WhatsApp">
-                        <span class="cta-icon-new">💬</span>
-                        <div class="cta-text-new">
-                            <strong>WhatsApp Direto</strong>
-                            <small>Resposta em 1 minuto</small>
+                        <span class="cta-icon">📞</span>
+                        <div class="cta-content">
+                            <strong>Ligar para Cesar Agora</strong>
+                            <small>Resposta imediata • Instalação GRÁTIS</small>
                         </div>
                     </a>
                 </div>
 
-                <!-- Região de atendimento -->
-                <div class="region-badge">
-                    <span class="region-icon">📍</span>
-                    <span class="region-text">Beira Alta • Beira Baixa • Alto Alentejo</span>
+                <!-- Links Secundários -->
+                <div class="hero-secondary-mobile">
+                    <a href="https://wa.me/351961055030?text=Olá%20Cesar!%20Vi%20no%20site%20sobre%20os%20painéis%20solares" 
+                       target="_blank" class="secondary-link">
+                        💬 WhatsApp
+                    </a>
+                    <span class="divider">•</span>
+                    <a href="#form-section" class="secondary-link scroll-to-form">
+                        📝 Pedir Contacto
+                    </a>
                 </div>
 
-                <!-- Link para formulário -->
-                <div class="hero-footer-link">
-                    <a href="#form-section" class="scroll-to-form">
-                        <span>Prefere que o Cesar entre em contacto? <strong>Clique aqui</strong></span>
-                        <small>✅ 100% Gratuito ✅ Sem Compromisso</small>
-                    </a>
+                <!-- Região Compacta -->
+                <div class="region-badge-mobile">
+                    <span>📍</span> Beira Alta • Beira Baixa • Alto Alentejo
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- SIMULADOR SECTION -->
-    <section class="simulator-section-new">
+    <!-- SIMULADOR COMPACTO -->
+    <section class="simulator-mobile">
         <div class="container">
-            <div class="simulator-card-new">
-                <!-- Título -->
-                <h3 class="simulator-title">Qual o valor médio da sua conta?</h3>
+            <div class="simulator-card-mobile">
+                <!-- Título Compacto -->
+                <h3 class="simulator-title-mobile">Qual o valor da sua conta?</h3>
                 
-                <!-- Display do Valor -->
-                <div class="value-display-new">
+                <!-- Display Compacto -->
+                <div class="value-display-mobile">
                     <span class="currency">€</span>
-                    <span id="bill-value-display">150,00</span>
+                    <span id="bill-value-display">150</span>
                     <button class="edit-btn" onclick="enableEdit()" aria-label="Editar valor">✏️</button>
                 </div>
                 
-                <!-- Slider -->
-                <div class="slider-container">
+                <!-- Slider Otimizado -->
+                <div class="slider-container-mobile">
                     <input type="range" 
                            id="bill-slider" 
                            min="10" 
                            max="1000" 
                            value="150" 
                            step="5"
-                           class="bill-slider"
+                           class="bill-slider-mobile"
                            aria-label="Valor da conta mensal">
-                    <div class="slider-labels">
+                    <div class="slider-labels-mobile">
                         <span>€10</span>
                         <span>€1000</span>
                     </div>
                 </div>
                 
-                <!-- Resultados -->
-<div class="results-container">
-    <!-- Economia 1º Ano -->
-    <div class="result-card primeiro-ano">
-        <div class="result-header">
-            <span class="result-icon">📊</span>
-            <span class="result-period">Economia por ano:</span>
-        </div>
-        <div class="result-value">
-            <span class="currency-small">€</span>
-            <span id="first-year-saving">540</span>
-            <span class="per-year">/ano</span>
-        </div>
-        <div class="result-detail">30% de economia mensal</div>
-    </div>
-    
-    <!-- Economia após 5 anos -->
-    <div class="result-card cinco-anos">
-        <div class="result-header">
-            <span class="result-icon">🚀</span>
-            <span class="result-period">Economia por ano (após 5 anos):</span>
-        </div>
-        <div class="result-value">
-            <span class="currency-small">€</span>
-            <span id="five-year-saving">1.260</span>
-            <span class="per-year">/ano</span>
-        </div>
-        <div class="result-detail">70% de economia mensal</div>
-    </div>
-</div>
-
-<!-- Economia Total em 10 Anos -->
-<div class="total-savings-container">
-    <div class="total-savings-card">
-        <div class="total-icon">💰</div>
-        <div class="total-text">
-            <span class="total-label">Economia total em 10 anos:</span>
-            <span class="total-value">€<span id="total-ten-years">0</span></span>
-        </div>
-    </div>
-</div>
-                
-                <!-- Botão CTA -->
-                <button class="simulator-cta" onclick="contactCesar()">
-                    <span class="cta-icon">📞</span>
-                    <div class="cta-content">
-                        <strong>Quero Esta Economia!</strong>
-                        <small>Falar com Cesar Jardim agora</small>
+                <!-- Resultados Compactos -->
+                <div class="results-mobile">
+                    <div class="result-item-mobile primeiro-ano">
+                        <div class="result-label">Primeiros 5 anos:</div>
+                        <div class="result-value">€<span id="first-year-saving">540</span><span class="per-year"> por ano</span></div>
                     </div>
+                    
+                    <div class="result-item-mobile cinco-anos">
+                        <div class="result-label">Após 5 anos:</div>
+                        <div class="result-value">€<span id="five-year-saving">1260</span><span class="per-year"> por ano</span></div>
+                    </div>
+                </div>
+
+                <!-- Explicação da economia -->
+                <div class="results-explanation">
+                    <small>💡 Economia anual na sua conta de luz</small>
+                </div>
+
+                <!-- Total Economia Compacto -->
+                <div class="total-savings-mobile">
+                    <div class="total-icon">💰</div>
+                    <div class="total-text">
+                        <span class="total-label">Total em 10 anos:</span>
+                        <span class="total-value">€<span id="total-ten-years">9000</span></span>
+                    </div>
+                </div>
+                
+                <!-- CTA Simulador -->
+                <button class="simulator-cta-mobile" onclick="contactCesar()">
+                    <span class="cta-icon">🚀</span>
+                    <span>Quero Esta Economia!</span>
                 </button>
-                
-                <!-- Informação adicional -->
-                <div class="simulator-footer">
-                    <div class="info-item">
-                        <span class="info-icon">✅</span>
-                        <span>Instalação 100% gratuita</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">✅</span>
-                        <span>Sem entrada • Até 96 meses</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
-    <section class="how-it-works-new">
+    <!-- COMO FUNCIONA COMPACTO -->
+    <section class="how-it-works-mobile">
         <div class="container">
-            <h2 class="section-title-new">Como Funciona?</h2>
-            <p class="section-subtitle-new">3 passos simples para começar a economizar</p>
+            <h2 class="section-title-mobile">Como Funciona?</h2>
             
-            <div class="steps-grid">
-                <div class="step-card">
+            <div class="steps-mobile">
+                <div class="step-mobile">
                     <div class="step-number">1</div>
-                    <div class="step-icon">📞</div>
-                    <h3>Ligue para o Cesar</h3>
-                    <p>Conversa rápida para entender suas necessidades e agendar visita técnica gratuita</p>
+                    <div class="step-content">
+                        <h3>📞 Ligue para o Cesar</h3>
+                        <p>Conversa rápida para agendar visita técnica gratuita</p>
+                    </div>
                 </div>
                 
-                <div class="step-card">
+                <div class="step-mobile">
                     <div class="step-number">2</div>
-                    <div class="step-icon">🏠</div>
-                    <h3>Instalação Gratuita</h3>
-                    <p>Equipa especializada instala seus painéis sem custo algum com 5 anos de garantia</p>
+                    <div class="step-content">
+                        <h3>🏠 Instalação Gratuita</h3>
+                        <p>Equipa especializada instala sem custo com garantia</p>
+                    </div>
                 </div>
                 
-                <div class="step-card">
+                <div class="step-mobile">
                     <div class="step-number">3</div>
-                    <div class="step-icon">💰</div>
-                    <h3>Comece a Economizar</h3>
-                    <p>Veja a redução imediata na sua conta de luz já no primeiro mês</p>
+                    <div class="step-content">
+                        <h3>💰 Comece a Economizar</h3>
+                        <p>Redução na conta já no primeiro mês</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BENEFÍCIOS SECTION -->
-    <section id="benefits" class="benefits-new" role="complementary">
+    <!-- BENEFÍCIOS PRINCIPAIS (3 em vez de 6) -->
+    <section id="benefits" class="benefits-mobile" role="complementary">
         <div class="container">
-            <header class="section-header">
-                <h2 class="section-title">Por Que Centenas de Famílias da Beira Alta, Beira Baixa e Alto Alentejo Já Escolheram Painéis Solares?</h2>
-                <p class="section-subtitle">Descubra as vantagens que fazem a diferença na sua conta todos os meses</p>
-            </header>
+            <h2 class="section-title-mobile">Por Que Centenas de Famílias Já Escolheram?</h2>
             
-            <div class="benefits-grid">
-                <article class="benefit-card fade-in" data-benefit="savings">
-                    <div class="benefit-icon-container">
-                        <div class="benefit-icon">💰</div>
-                        <div class="benefit-badge">MAIS PROCURADO</div>
-                    </div>
-                    <h3>Economia Imediata Garantida</h3>
-                    <p class="benefit-description">
-                        <strong>Reduza até 30% da sua conta já no primeiro mês</strong> e chegue até 70% de economia. 
-                        Mesmo pagando as prestações, a sua conta diminui logo no início.
-                    </p>
-                    <div class="benefit-proof">
-                        <span class="proof-metric">30%</span>
-                        <span class="proof-label">Economia no 1º mês</span>
-                    </div>
+            <div class="benefits-grid-mobile">
+                <!-- Benefício 1 -->
+                <article class="benefit-card-mobile fade-in">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Economia Imediata</h3>
+                    <p>Reduza <strong>até 30% já no primeiro mês</strong> e chegue até 70% de economia total.</p>
+                    <div class="benefit-proof">30% no 1º mês</div>
                 </article>
 
-                <article class="benefit-card fade-in" data-benefit="financing">
-                    <div class="benefit-icon-container">
-                        <div class="benefit-icon">🏦</div>
-                    </div>
-                    <h3>Sem Entrada, Sem Juros</h3>
-                    <p class="benefit-description">
-                        <strong>Parcele em até 96 meses sem entrada inicial.</strong> 
-                        A sua economia mensal cobre as prestações e ainda sobra dinheiro no bolso!
-                    </p>
-                    <div class="benefit-proof">
-                        <span class="proof-metric">96x</span>
-                        <span class="proof-label">Meses para pagar</span>
-                    </div>
+                <!-- Benefício 2 -->
+                <article class="benefit-card-mobile fade-in">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Instalação Gratuita</h3>
+                    <p><strong>Zero custos de instalação</strong> + 5 anos de garantia total. Sem obras complicadas.</p>
+                    <div class="benefit-proof">100% Gratuita</div>
                 </article>
 
-                <article class="benefit-card fade-in" data-benefit="installation">
-                    <div class="benefit-icon-container">
-                        <div class="benefit-icon">⚡</div>
-                    </div>
-                    <h3>Instalação 100% Gratuita</h3>
-                    <p class="benefit-description">
-                        <strong>Instalação completa sem custo + 5 anos de garantia total.</strong> 
-                        Sem obras complicadas, sem transtornos, equipa especializada.
-                    </p>
-                    <div class="benefit-proof">
-                        <span class="proof-metric">5</span>
-                        <span class="proof-label">Anos garantia instalação</span>
-                    </div>
+                <!-- Benefício 3 -->
+                <article class="benefit-card-mobile fade-in">
+                    <div class="benefit-icon">🏦</div>
+                    <h3>Sem Entrada</h3>
+                    <p><strong>Parcele em 96 meses sem entrada.</strong> Sua economia cobre as prestações!</p>
+                    <div class="benefit-proof">96x sem juros</div>
                 </article>
+            </div>
 
-                <article class="benefit-card fade-in" data-benefit="warranty">
-                    <div class="benefit-icon-container">
-                        <div class="benefit-icon">🛡️</div>
-                    </div>
-                    <h3>25 Anos de Garantia nos Painéis</h3>
-                    <p class="benefit-description">
-                        <strong>Tranquilidade total por 25 anos</strong> nos painéis solares. 
-                        Qualidade certificada, tecnologia testada e aprovada.
-                    </p>
-                    <div class="benefit-proof">
-                        <span class="proof-metric">25</span>
-                        <span class="proof-label">Anos de garantia</span>
-                    </div>
-                </article>
-
-                <article class="benefit-card fade-in" data-benefit="property">
-                    <div class="benefit-icon-container">
-                        <div class="benefit-icon">📈</div>
-                    </div>
-                    <h3>Casa Mais Valorizada e Moderna</h3>
-                    <p class="benefit-description">
-                        <strong>O seu imóvel começa a valer mais!</strong> 
-                        Casas com painéis solares são mais procuradas e valorizadas no mercado.
-                    </p>
-                    <div class="benefit-proof">
-                        <span class="proof-metric">+15%</span>
-                        <span class="proof-label">Valorização média</span>
-                    </div>
-                </article>
-
-                <article class="benefit-card fade-in" data-benefit="environment">
-                    <div class="benefit-icon-container">
-                        <div class="benefit-icon">🌍</div>
-                    </div>
-                    <h3>Ajude o Planeta e Economize</h3>
-                    <p class="benefit-description">
-                        <strong>Energia 100% limpa e renovável.</strong> 
-                        Contribua para um futuro sustentável enquanto poupa dinheiro.
-                    </p>
-                    <div class="benefit-proof">
-                        <span class="proof-metric">100%</span>
-                        <span class="proof-label">Energia limpa</span>
-                    </div>
-                </article>
+            <!-- CTA após benefícios -->
+            <div class="benefits-cta-mobile">
+                <a href="tel:+351961055030" class="benefits-cta-btn">
+                    📞 Quero Saber Mais
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FORM SECTION -->
-    <section id="form-section" class="form-section" role="form">
+    <!-- FORMULÁRIO COMPACTO -->
+    <section id="form-section" class="form-mobile" role="form">
         <div class="container">
-            <div class="form-container fade-in">
-                <header class="form-header">
-                    <h2 class="section-title-form">Receba a Sua Simulação GRATUITA em 2 Minutos</h2>
-                    <p class="form-subtitle">
-                        <strong>Cesar Jardim</strong> - Especialista em Painéis Solares na Beira Alta, Beira Baixa e Alto Alentejo. 
-                        <span class="highlight-text">Quer ser o próximo a economizar?</span>
-                    </p>
-                </header>
+            <div class="form-container-mobile fade-in">
+                <div class="form-header-mobile">
+                    <h2>Receba Simulação GRATUITA</h2>
+                    <p><strong>Cesar Jardim</strong> liga em 2 minutos</p>
+                </div>
 
-                <form id="lead-form" class="lead-form" novalidate>
+                <form id="lead-form" class="lead-form-mobile" novalidate>
                     <!-- Nome -->
-                    <div class="form-group">
-                        <label for="nome" class="form-label">
-                            Nome Completo <span class="required">*</span>
-                        </label>
-                        <div class="input-container">
-                            <input type="text" 
-                                   id="nome" 
-                                   name="nome" 
-                                   placeholder="Ex: Maria Silva" 
-                                   required 
-                                   aria-describedby="nome-error"
-                                   class="form-input">
-                            <span class="input-icon">👤</span>
-                        </div>
+                    <div class="form-group-mobile">
+                        <input type="text" 
+                               id="nome" 
+                               name="nome" 
+                               placeholder="Seu nome completo *" 
+                               required 
+                               class="form-input-mobile">
                         <span id="nome-error" class="error-message" role="alert"></span>
                     </div>
 
                     <!-- Telefone -->
-                    <div class="form-group">
-                        <label for="telefone" class="form-label">
-                            Telemóvel <span class="required">*</span>
-                        </label>
-                        <div class="input-container">
-                            <input type="tel" 
-                                   id="telefone" 
-                                   name="telefone" 
-                                   placeholder="9XX XXX XXX" 
-                                   required 
-                                   pattern="[9][0-9]{8}"
-                                   aria-describedby="telefone-error telefone-hint"
-                                   class="form-input">
-                            <span class="input-icon">📱</span>
-                        </div>
-                        <small id="telefone-hint" class="form-hint">Formato: 9XX XXX XXX</small>
+                    <div class="form-group-mobile">
+                        <input type="tel" 
+                               id="telefone" 
+                               name="telefone" 
+                               placeholder="Telemóvel (9XX XXX XXX) *" 
+                               required 
+                               pattern="[9][0-9]{8}"
+                               class="form-input-mobile">
                         <span id="telefone-error" class="error-message" role="alert"></span>
                     </div>
 
                     <!-- Email -->
-                    <div class="form-group">
-                        <label for="email" class="form-label">
-                            Email <span class="optional">(Opcional)</span>
-                        </label>
-                        <div class="input-container">
-                            <input type="email" 
-                                   id="email" 
-                                   name="email" 
-                                   placeholder="Ex: maria@email.com"
-                                   aria-describedby="email-error"
-                                   class="form-input">
-                            <span class="input-icon">✉️</span>
-                        </div>
+                    <div class="form-group-mobile">
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               placeholder="Email (opcional)"
+                               class="form-input-mobile">
                         <span id="email-error" class="error-message" role="alert"></span>
                     </div>
 
-                    <!-- Checkbox RGPD -->
-                    <div class="form-group checkbox-group">
-                        <label class="checkbox-container">
+                    <!-- Checkbox Compacto -->
+                    <div class="checkbox-mobile">
+                        <label class="checkbox-container-mobile">
                             <input type="checkbox" 
                                    id="privacy_policy" 
                                    name="privacy_policy" 
                                    required 
-                                   checked
-                                   aria-describedby="privacy-error">
-                            <span class="checkmark"></span>
-                            <span class="checkbox-text">
-                                Concordo com a <a href="politica-privacidade.html" target="_blank" class="policy-link">Política de Privacidade</a> 
-                                e autorizo o Cesar Jardim a contactar-me. <span class="required">*</span>
+                                   checked>
+                            <span class="checkmark-mobile"></span>
+                            <span class="checkbox-text-mobile">
+                                Autorizo contacto. <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a>
                             </span>
                         </label>
                         <span id="privacy-error" class="error-message" role="alert"></span>
                     </div>
 
-                    <!-- Botão Submit -->
-                    <button type="submit" class="form-submit-button" data-event="form-submit">
+                    <!-- Botão Submit Compacto -->
+                    <button type="submit" class="form-submit-mobile" data-event="form-submit">
                         <span class="submit-icon">🚀</span>
-                        <span class="submit-text">QUERO MINHA SIMULAÇÃO GRATUITA!</span>
-                        <span class="submit-subtext">Cesar liga em até 2 minutos</span>
+                        <span>QUERO MINHA SIMULAÇÃO!</span>
                     </button>
 
                     <!-- Loading State -->
                     <div class="form-loading" id="form-loading" style="display: none;">
                         <div class="loading-spinner"></div>
-                        <span>Enviando seus dados...</span>
+                        <span>Enviando...</span>
                     </div>
                 </form>
 
-                <!-- Form Footer -->
-                <footer class="form-footer">
-                    <div class="security-badges">
-                        <div class="security-badge">
-                            <span class="security-icon">🔒</span>
-                            <span class="security-text">SSL Seguro</span>
-                        </div>
-                        <div class="security-badge">
-                            <span class="security-icon">🛡️</span>
-                            <span class="security-text">RGPD Compliant</span>
-                        </div>
-                        <div class="security-badge">
-                            <span class="security-icon">⚡</span>
-                            <span class="security-text">Resposta Rápida</span>
-                        </div>
+                <!-- Garantias Compactas -->
+                <div class="form-footer-mobile">
+                    <div class="security-items">
+                        <span>🔒 Dados Seguros</span>
+                        <span>⚡ Resposta Rápida</span>
+                        <span>🎯 Especialista Local</span>
                     </div>
-                    <p class="form-footer-note">
-                        <strong>Garantimos:</strong> Seus dados 100% seguros, sem spam, especialista da sua região.
-                    </p>
-                </footer>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS SECTION -->
-    <section class="stats-section" role="complementary">
+    <!-- STATS COMPACTOS -->
+    <section class="stats-mobile" role="complementary">
         <div class="container">
-            <header class="stats-header fade-in">
-                <h2 class="section-title">Cesar Jardim em Números</h2>
-                <p class="stats-subtitle">Especialista em painéis solares na Beira Alta, Beira Baixa e Alto Alentejo</p>
-            </header>
+            <h2 class="section-title-mobile">Cesar Jardim em Números</h2>
             
-            <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <div class="stat-icon">💰</div>
+            <div class="stats-grid-mobile">
+                <div class="stat-item-mobile fade-in">
                     <div class="stat-number" data-count="30">0</div>
-                    <div class="stat-unit">%</div>
-                    <div class="stat-label">Economia Imediata</div>
-                    <div class="stat-detail">já no primeiro mês</div>
+                    <div class="stat-label">% Economia Imediata</div>
                 </div>
                 
-                <div class="stat-item fade-in">
-                    <div class="stat-icon">🏠</div>
+                <div class="stat-item-mobile fade-in">
                     <div class="stat-number" data-count="500">0</div>
-                    <div class="stat-unit">+</div>
-                    <div class="stat-label">Casas Instaladas</div>
-                    <div class="stat-detail">na região</div>
+                    <div class="stat-label">+ Casas Instaladas</div>
                 </div>
                 
-                <div class="stat-item fade-in">
-                    <div class="stat-icon">⚡</div>
+                <div class="stat-item-mobile fade-in">
                     <div class="stat-number" data-count="0">0</div>
-                    <div class="stat-unit">€</div>
-                    <div class="stat-label">Instalação Gratuita</div>
-                    <div class="stat-detail">sem qualquer custo inicial</div>
+                    <div class="stat-label">€ Instalação</div>
                 </div>
                 
-                <div class="stat-item fade-in">
-                    <div class="stat-icon">🛡️</div>
+                <div class="stat-item-mobile fade-in">
                     <div class="stat-number" data-count="25">0</div>
-                    <div class="stat-unit">anos</div>
-                    <div class="stat-label">Garantia Total</div>
-                    <div class="stat-detail">nos painéis solares</div>
+                    <div class="stat-label">Anos Garantia</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials-section" role="complementary">
+    <!-- TESTEMUNHOS COMPACTOS -->
+    <section class="testimonials-mobile" role="complementary">
         <div class="container">
-            <header class="section-header fade-in">
-                <h2 class="section-title">Histórias Reais de Economia</h2>
-                <p class="section-subtitle">Veja como os clientes do Cesar transformaram suas contas de luz</p>
-            </header>
+            <h2 class="section-title-mobile">O Que Dizem os Clientes</h2>
             
-            <div class="testimonials-grid">
-                <!-- Depoimento 1 - Viseu -->
-                <article class="testimonial-card fade-in" data-rating="5">
-                    <header class="testimonial-header">
-                        <div class="testimonial-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span class="rating-text">5.0</span>
-                        </div>
-                        <time class="testimonial-date" datetime="2024-11">Novembro 2024</time>
-                    </header>
-                    
-                    <div class="testimonial-content">
-                        <picture class="testimonial-photo">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" 
-                                 alt="António Silva, cliente satisfeito de Viseu"
-                                 width="70" height="70" loading="lazy">
-                        </picture>
-                        
-                        <blockquote class="testimonial-text">
-                            "Incrível! A minha conta desceu de <strong>€165 para apenas €115</strong> logo no primeiro mês. 
-                            O Cesar instalou tudo num dia, muito profissional. Estou a economizar mais do que pago nas prestações!"
-                        </blockquote>
-                        
-                        <footer class="testimonial-author">
-                            <cite>António Silva</cite>
-                            <span class="author-location">Viseu</span>
-                            <div class="savings-highlight">€50/mês economizados</div>
-                        </footer>
+            <div class="testimonials-slider-mobile">
+                <!-- Testemunho 1 -->
+                <article class="testimonial-mobile fade-in">
+                    <div class="testimonial-content-mobile">
+                        <div class="stars-mobile">⭐⭐⭐⭐⭐</div>
+                        <blockquote>"Minha conta desceu de €165 para €115 no primeiro mês. Instalação rápida e profissional!"</blockquote>
+                        <cite>António Silva, Viseu</cite>
+                        <div class="savings-badge">€50/mês economizados</div>
                     </div>
                 </article>
 
-                <!-- Depoimento 2 - Castelo Branco -->
-                <article class="testimonial-card fade-in" data-rating="5">
-                    <header class="testimonial-header">
-                        <div class="testimonial-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span class="rating-text">5.0</span>
-                        </div>
-                        <time class="testimonial-date" datetime="2024-12">Dezembro 2024</time>
-                    </header>
-                    
-                    <div class="testimonial-content">
-                        <picture class="testimonial-photo">
-                            <img src="https://randomuser.me/api/portraits/women/28.jpg" 
-                                 alt="Maria Santos, cliente satisfeita de Castelo Branco"
-                                 width="70" height="70" loading="lazy">
-                        </picture>
-                        
-                        <blockquote class="testimonial-text">
-                            "O Cesar explicou tudo muito bem e <strong>instalou os painéis gratuitamente</strong>. 
-                            Já estou a economizar €40 por mês e ainda estou a pagar as prestações. Recomendo!"
-                        </blockquote>
-                        
-                        <footer class="testimonial-author">
-                            <cite>Maria Santos</cite>
-                            <span class="author-location">Castelo Branco</span>
-                            <div class="savings-highlight">€40/mês economizados</div>
-                        </footer>
-                    </div>
-                </article>
-
-                <!-- Depoimento 3 - Portalegre -->
-                <article class="testimonial-card fade-in" data-rating="5">
-                    <header class="testimonial-header">
-                        <div class="testimonial-rating">
-                            <span class="stars">⭐⭐⭐⭐⭐</span>
-                            <span class="rating-text">5.0</span>
-                        </div>
-                        <time class="testimonial-date" datetime="2024-10">Outubro 2024</time>
-                    </header>
-                    
-                    <div class="testimonial-content">
-                        <picture class="testimonial-photo">
-                            <img src="https://randomuser.me/api/portraits/men/45.jpg" 
-                                 alt="João Pereira, cliente satisfeito de Portalegre"
-                                 width="70" height="70" loading="lazy">
-                        </picture>
-                        
-                        <blockquote class="testimonial-text">
-                            "Melhor investimento que fiz! <strong>€65 de economia mensal</strong> e a casa ficou mais valorizada. 
-                            O Cesar é de confiança, conhece bem a região e fez um trabalho impecável."
-                        </blockquote>
-                        
-                        <footer class="testimonial-author">
-                            <cite>João Pereira</cite>
-                            <span class="author-location">Portalegre</span>
-                            <div class="savings-highlight">€65/mês economizados</div>
-                        </footer>
+                <!-- Testemunho 2 -->
+                <article class="testimonial-mobile fade-in">
+                    <div class="testimonial-content-mobile">
+                        <div class="stars-mobile">⭐⭐⭐⭐⭐</div>
+                        <blockquote>"Instalação gratuita como prometido. Já economizo €40 mensais mesmo pagando prestações!"</blockquote>
+                        <cite>Maria Santos, Castelo Branco</cite>
+                        <div class="savings-badge">€40/mês economizados</div>
                     </div>
                 </article>
             </div>
 
-            <!-- CTA dentro dos Testemunhos -->
-            <div class="testimonials-cta fade-in">
-                <p class="cta-text">
-                    <strong>Quer ser o próximo a economizar na sua região?</strong>
-                </p>
-                <div class="inline-cta-buttons">
-                    <a href="tel:+351961055030" class="inline-cta-btn phone-cta">
-                        📞 Ligue para o Cesar
+            <!-- CTA Testemunhos -->
+            <div class="testimonials-cta-mobile">
+                <p><strong>Quer ser o próximo?</strong></p>
+                <div class="testimonials-buttons-mobile">
+                    <a href="tel:+351961055030" class="testimonial-btn-mobile primary">
+                        📞 Ligar Agora
                     </a>
-                    <a href="#form-section" class="inline-cta-btn form-cta scroll-to-form">
-                        📝 Pedir Simulação
+                    <a href="#form-section" class="testimonial-btn-mobile secondary scroll-to-form">
+                        📝 Pedir Contacto
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="faq-section" role="complementary">
+    <!-- FAQ COMPACTO -->
+    <section class="faq-mobile" role="complementary">
         <div class="container">
-            <header class="section-header fade-in">
-                <h2 class="section-title">Perguntas Mais Frequentes</h2>
-                <p class="section-subtitle">Esclarecemos todas as suas dúvidas sobre painéis solares</p>
-            </header>
+            <h2 class="section-title-mobile">Perguntas Frequentes</h2>
             
-            <div class="faq-grid">
-                <article class="faq-item fade-in" data-popular="true">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
-                        <span class="faq-icon">💰</span>
-                        <span class="faq-text">Quanto posso realmente economizar por mês?</span>
-                        <span class="popular-badge">MAIS PERGUNTADA</span>
+            <div class="faq-list-mobile">
+                <article class="faq-item-mobile fade-in">
+                    <button class="faq-question-mobile" aria-expanded="false" aria-controls="faq-1">
+                        <span>💰 Quanto posso economizar por mês?</span>
+                        <span class="faq-toggle">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-1">
-                        <p>
-                            A economia varia entre <strong>€30 a €80 por mês</strong> logo de início, podendo chegar até 70% de redução total. 
-                            <strong>Exemplo real:</strong> Cliente em Viseu baixou de €165 para €115/mês (economia de €50) mesmo pagando as prestações.
-                        </p>
-                        <div class="faq-cta">
-                            <a href="tel:+351961055030" class="faq-cta-btn">
-                                Calcule a SUA economia grátis
-                            </a>
-                        </div>
+                    <div class="faq-answer-mobile" id="faq-1">
+                        <p>Entre <strong>€30 a €80 por mês</strong> logo no início, chegando até 70% de redução total. Exemplo: cliente em Viseu baixou de €165 para €115/mês.</p>
                     </div>
                 </article>
 
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
-                        <span class="faq-icon">🏦</span>
-                        <span class="faq-text">Como funciona o pagamento sem entrada e sem juros?</span>
+                <article class="faq-item-mobile fade-in">
+                    <button class="faq-question-mobile" aria-expanded="false" aria-controls="faq-2">
+                        <span>🏦 Como funciona sem entrada?</span>
+                        <span class="faq-toggle">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-2">
-                        <p>
-                            É simples: <strong>parcela em até 96 meses sem entrada inicial e sem juros</strong>. 
-                            A sua economia mensal na conta de luz cobre as prestações e ainda sobra dinheiro no bolso!
-                        </p>
-                        <div class="example-calculation">
-                            <strong>Exemplo:</strong> Prestação €80/mês + Economia €120/mês = <span class="profit">€40/mês lucro!</span>
-                        </div>
+                    <div class="faq-answer-mobile" id="faq-2">
+                        <p><strong>Parcela em até 96 meses sem entrada.</strong> Sua economia mensal cobre as prestações e ainda sobra dinheiro!</p>
                     </div>
                 </article>
 
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
-                        <span class="faq-icon">⚡</span>
-                        <span class="faq-text">A instalação é realmente gratuita?</span>
+                <article class="faq-item-mobile fade-in">
+                    <button class="faq-question-mobile" aria-expanded="false" aria-controls="faq-3">
+                        <span>⚡ A instalação é realmente gratuita?</span>
+                        <span class="faq-toggle">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-3">
-                        <p>
-                            <strong>Sim, 100% gratuita!</strong> O Cesar e sua equipa realizam toda a instalação sem custo algum 
-                            e ainda oferecem 5 anos de garantia na instalação. Sem obras complicadas, sem sujeira, sem transtornos.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
-                        <span class="faq-icon">☁️</span>
-                        <span class="faq-text">E nos dias nublados, funciona?</span>
-                    </button>
-                    <div class="faq-answer" id="faq-4">
-                        <p>
-                            <strong>Sim, funciona!</strong> Os painéis produzem energia mesmo em dias nublados. 
-                            Portugal tem mais de 2.200 horas de sol por ano. Quando não produz energia suficiente, 
-                            você usa da rede elétrica normalmente. <strong>Nunca fica sem energia!</strong>
-                        </p>
-                    </div>
-                </article>
-
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
-                        <span class="faq-icon">🛡️</span>
-                        <span class="faq-text">Que garantias eu tenho?</span>
-                    </button>
-                    <div class="faq-answer" id="faq-5">
-                        <p>
-                            <strong>Garantia completa:</strong><br>
-                            ✅ <strong>25 anos</strong> de garantia nos painéis solares<br>
-                            ✅ <strong>5 anos</strong> de garantia na instalação<br>
-                            ✅ <strong>Suporte técnico</strong> do Cesar sempre disponível
-                        </p>
-                    </div>
-                </article>
-
-                <article class="faq-item fade-in">
-                    <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
-                        <span class="faq-icon">📍</span>
-                        <span class="faq-text">O Cesar atende na minha região?</span>
-                    </button>
-                    <div class="faq-answer" id="faq-6">
-                        <p>
-                            O Cesar atende especificamente:<br>
-                            ✅ <strong>Beira Alta</strong> (Viseu, Aveiro, Coimbra...)<br>
-                            ✅ <strong>Beira Baixa</strong> (Castelo Branco, Covilhã...)<br>
-                            ✅ <strong>Alto Alentejo</strong> (Portalegre, Évora...)
-                        </p>
-                        <p>Ligue para confirmar se atende na sua cidade específica!</p>
+                    <div class="faq-answer-mobile" id="faq-3">
+                        <p><strong>Sim, 100% gratuita!</strong> Instalação completa sem custo + 5 anos de garantia. Sem obras complicadas.</p>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
-    <section class="final-cta-section" role="call-to-action">
+    <!-- FINAL CTA COMPACTO -->
+    <section class="final-cta-mobile" role="call-to-action">
         <div class="container">
-            <div class="final-cta-content fade-in">
-                <header class="final-cta-header">
-                    <h2 class="section-title-final">⏰ Últimas Vagas do Mês para Instalação Gratuita!</h2>
-                    <p class="final-cta-subtitle">
-                        <strong>Não perca esta oportunidade única.</strong> 
-                        Cesar Jardim está a instalar painéis solares gratuitamente na Beira Alta, Beira Baixa e Alto Alentejo.
-                    </p>
-                </header>
+            <div class="final-content-mobile fade-in">
+                <h2>⏰ Últimas Vagas do Mês!</h2>
+                <p>Não perca a <strong>instalação gratuita</strong> na sua região</p>
 
                 <!-- Benefícios Finais -->
-                <div class="final-benefits">
-                    <div class="final-benefit">
-                        <span class="benefit-icon">✅</span>
-                        <span class="benefit-text"><strong>Instalação gratuita</strong> garantida</span>
-                    </div>
-                    <div class="final-benefit">
-                        <span class="benefit-icon">✅</span>
-                        <span class="benefit-text"><strong>Sem entrada, sem juros</strong> - 96 meses</span>
-                    </div>
-                    <div class="final-benefit">
-                        <span class="benefit-icon">✅</span>
-                        <span class="benefit-text"><strong>25 anos de garantia</strong> inclusa</span>
-                    </div>
-                    <div class="final-benefit">
-                        <span class="benefit-icon">✅</span>
-                        <span class="benefit-text"><strong>Economia até 70%</strong> na conta</span>
-                    </div>
+                <div class="final-benefits-mobile">
+                    <span>✅ Instalação 100% gratuita</span>
+                    <span>✅ Sem entrada • 96 meses</span>
+                    <span>✅ Economia até 70%</span>
                 </div>
 
                 <!-- CTAs Finais -->
-                <div class="cta-container final-ctas">
+                <div class="final-ctas-mobile">
                     <a href="tel:+351961055030" 
-                       class="cta-button cta-phone cta-urgent"
+                       class="final-cta-btn primary"
                        data-event="final-phone-click">
-                        <div class="cta-icon-container">
-                            <span class="cta-icon">📞</span>
-                            <span class="urgency-pulse"></span>
-                        </div>
-                        <div class="cta-content">
-                            <span class="cta-action">LIGUE AGORA - ÚLTIMAS VAGAS!</span>
-                            <small class="cta-urgency">⚠️ Instalação gratuita só até final do mês</small>
-                            <small class="cta-guarantee">🎯 Cesar Jardim - Especialista da região</small>
+                        <span class="cta-icon">📞</span>
+                        <div class="cta-text">
+                            <strong>LIGUE AGORA</strong>
+                            <small>Últimas vagas!</small>
                         </div>
                     </a>
                     
-                    <a href="https://wa.me/351961055030?text=Urgente!%20Quero%20aproveitar%20as%20últimas%20vagas%20para%20instalação%20gratuita%20de%20painéis%20solares!" 
+                    <a href="https://wa.me/351961055030?text=Urgente!%20Quero%20instalação%20gratuita!" 
                        target="_blank" 
-                       class="cta-button cta-whatsapp cta-urgent"
+                       class="final-cta-btn secondary"
                        data-event="final-whatsapp-click">
-                        <div class="cta-icon-container">
-                            <span class="cta-icon">💬</span>
-                            <span class="online-indicator-final"></span>
-                        </div>
-                        <div class="cta-content">
-                            <span class="cta-action">WHATSAPP URGENTE</span>
-                            <small class="cta-benefit">💬 Resposta imediata do Cesar</small>
-                            <small class="cta-proof">🔥 Especialista na sua região</small>
+                        <span class="cta-icon">💬</span>
+                        <div class="cta-text">
+                            <strong>WHATSAPP</strong>
+                            <small>Resposta imediata</small>
                         </div>
                     </a>
                 </div>
@@ -859,60 +529,46 @@
         </div>
     </section>
 
-    <!-- STICKY CTA BAR -->
-    <div class="sticky-cta-bar" id="sticky-cta-bar" role="banner">
+    <!-- STICKY CTA OTIMIZADO -->
+    <div class="sticky-cta-mobile" id="sticky-cta-mobile" role="banner">
         <div class="container">
-            <div class="sticky-content">
-                <div class="sticky-message">
-                    <span class="sticky-urgency">⏰ ÚLTIMAS VAGAS!</span>
-                    <span class="sticky-benefit">Instalação gratuita + até 70% economia</span>
+            <div class="sticky-content-mobile">
+                <div class="sticky-message-mobile">
+                    <strong>Últimas Vagas!</strong>
+                    <span>Instalação gratuita</span>
                 </div>
-                <div class="sticky-buttons">
+                <div class="sticky-buttons-mobile">
                     <a href="tel:+351961055030" 
-                       class="sticky-button sticky-phone"
-                       data-event="sticky-phone-click"
-                       aria-label="Ligar para Cesar">
-                        <span class="sticky-icon">📞</span>
-                        <span class="sticky-text">Cesar</span>
+                       class="sticky-btn phone"
+                       data-event="sticky-phone-click">
+                        📞
                     </a>
-                    <a href="https://wa.me/351961055030?text=Vi%20na%20barra%20do%20site%20-%20quero%20saber%20sobre%20instalação%20gratuita%20de%20painéis!" 
+                    <a href="https://wa.me/351961055030" 
                        target="_blank" 
-                       class="sticky-button sticky-whatsapp"
-                       data-event="sticky-whatsapp-click"
-                       aria-label="WhatsApp Cesar">
-                        <span class="sticky-icon">💬</span>
-                        <span class="sticky-text">WhatsApp</span>
+                       class="sticky-btn whatsapp"
+                       data-event="sticky-whatsapp-click">
+                        💬
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
+    <!-- FOOTER COMPACTO -->
+    <footer class="footer-mobile" role="contentinfo">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Cesar Jardim - Painéis Solares</h3>
-                    <p class="footer-tagline">Especialista em energia solar na Beira Alta, Beira Baixa e Alto Alentejo</p>
-                </div>
+            <div class="footer-content-mobile">
+                <h3>Cesar Jardim - Painéis Solares</h3>
+                <p>Especialista em energia solar na sua região</p>
                 
-                <div class="footer-links">
-                    <nav class="footer-nav" role="navigation" aria-label="Links do rodapé">
-                        <a href="politica-privacidade.html" class="footer-link">Política de Privacidade</a>
-                        <a href="termos-rgpd.html" class="footer-link">Termos RGPD</a>
-                        <a href="tel:+351961055030" class="footer-link">+351 961 055 030</a>
-                    </nav>
+                <div class="footer-links-mobile">
+                    <a href="politica-privacidade.html">Política de Privacidade</a>
+                    <a href="tel:+351961055030">+351 961 055 030</a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © 2025 Cesar Jardim - Painéis Solares. Todos os direitos reservados.
-                </p>
-                <p class="footer-description">
-                    Transformando lares com energia limpa, económica e sustentável.
-                </p>
+            <div class="footer-bottom-mobile">
+                <p>© 2025 Cesar Jardim. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
