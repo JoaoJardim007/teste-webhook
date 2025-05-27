@@ -1,7 +1,7 @@
 /**
  * Cesar Jardim - Painéis Solares | JavaScript Mobile-First Otimizado
- * Versão 4.0 - Ultra Otimizado para Performance e Conversão Mobile
- * @version 4.0
+ * Versão 4.1 - Melhorias de Conversão Implementadas
+ * @version 4.1
  * @author Especialista em UX Mobile
  */
 
@@ -40,7 +40,6 @@ class CesarJardimMobileTracker {
         this.setupEventListeners();
         this.initCountdown();
         this.initScrollAnimations();
-        this.initStatsCounter();
         this.initFAQMobile();
         this.initStickyBarMobile();
         this.initFormValidationMobile();
@@ -143,7 +142,7 @@ class CesarJardimMobileTracker {
         this.log('⏰ Mobile countdown initialized');
     }
 
-    // ==================== SIMULADOR MOBILE OPTIMIZADO ====================
+    // ==================== SIMULADOR MOBILE OTIMIZADO ====================
     initSimulatorMobile() {
         const slider = document.getElementById('bill-slider');
         const valueDisplay = document.getElementById('bill-value-display');
@@ -180,8 +179,8 @@ class CesarJardimMobileTracker {
             });
         }
         
-        // Initial calculation
-        this.updateSimulatorValuesMobile(150);
+        // Initial calculation with new starting value (€60)
+        this.updateSimulatorValuesMobile(60);
         this.updateSliderBackgroundMobile(slider);
         
         this.log('🧮 Mobile simulator initialized');
@@ -361,50 +360,6 @@ class CesarJardimMobileTracker {
         }, 1000); // Longer throttle for mobile battery efficiency
 
         window.addEventListener('scroll', trackScroll, { passive: true });
-    }
-
-    // ==================== STATS COUNTER MOBILE ====================
-    initStatsCounter() {
-        const statsNumbers = document.querySelectorAll('.stat-number');
-        if (!statsNumbers.length) return;
-
-        const observerOptions = {
-            threshold: 0.5, // Higher threshold for mobile
-            rootMargin: '0px'
-        };
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.animateCounterMobile(entry.target);
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        statsNumbers.forEach(num => statsObserver.observe(num));
-    }
-
-    animateCounterMobile(element) {
-        const targetCount = parseInt(element.dataset.count);
-        const duration = 1500; // Shorter duration for mobile
-        const increment = targetCount / (duration / 32); // 30fps for mobile
-        let currentCount = 0;
-
-        const updateCounter = () => {
-            currentCount += increment;
-            if (currentCount >= targetCount) {
-                element.textContent = targetCount.toLocaleString('pt-PT');
-                this.trackEvent('mobile_stat_animation_complete', { 
-                    stat: targetCount
-                });
-            } else {
-                element.textContent = Math.floor(currentCount).toLocaleString('pt-PT');
-                requestAnimationFrame(updateCounter);
-            }
-        };
-
-        requestAnimationFrame(updateCounter);
     }
 
     // ==================== FAQ MOBILE ====================
@@ -1205,14 +1160,14 @@ class CesarJardimMobileTracker {
     }
 }
 
-// ==================== GLOBAL FUNCTIONS MOBILE ====================
+// ==================== GLOBAL FUNCTIONS MOBILE OTIMIZADAS ====================
 
 /**
  * Mobile-optimized edit functionality for simulator
  */
 function enableEdit() {
     const slider = document.getElementById('bill-slider');
-    const currentValue = slider ? slider.value : 150;
+    const currentValue = slider ? slider.value : 60; // Changed to default 60
     
     // Mobile-friendly prompt
     const newValue = prompt('Valor da conta mensal (€):', currentValue);
@@ -1228,14 +1183,15 @@ function enableEdit() {
 }
 
 /**
- * Mobile-optimized contact Cesar with simulator data
+ * Mobile-optimized contact Cesar with simulator data - OTIMIZADO
  */
 function contactCesar() {
-    const monthlyBill = document.getElementById('bill-slider')?.value || 150;
+    const monthlyBill = document.getElementById('bill-slider')?.value || 60; // Changed to default 60
     const firstYearSaving = document.getElementById('first-year-saving')?.textContent || '0';
     const fiveYearSaving = document.getElementById('five-year-saving')?.textContent || '0';
     const totalTenYears = document.getElementById('total-ten-years')?.textContent || '0';
     
+    // Mensagem otimizada conforme solicitado
     const message = `Olá Cesar! 
 
 📱 Vi no simulador mobile:
@@ -1245,7 +1201,7 @@ function contactCesar() {
 
 Minha conta mensal: €${monthlyBill}
 
-Quero instalação gratuita! 🏠⚡`;
+Quero poupar! 🏠⚡`;
     
     const whatsappUrl = `https://wa.me/351961055030?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

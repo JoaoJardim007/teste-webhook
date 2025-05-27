@@ -1,11 +1,3 @@
-/**
- * Cesar Jardim - Painéis Solares | CSS Mobile-First Otimizado
- * Versão 4.0 - Ultra Otimizado para Conversão Mobile
- * @version 4.0
- * @author Especialista em UX Mobile
- */
-
-/* ==================== CSS VARIABLES OTIMIZADAS ====================*/
 :root {
     /* === CORES EDP OFICIAIS === */
     --edp-primary-blue: #6C5CE7;
@@ -168,11 +160,10 @@ body {
     flex-shrink: 0;
 }
 
-/* ==================== HERO MOBILE ====================*/
+/* ==================== HERO MOBILE OTIMIZADO ====================*/
 .hero-mobile {
     background: var(--edp-gradient);
-    min-height: 70vh;
-    max-height: 70vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     padding: var(--space-xl) 0;
@@ -236,7 +227,7 @@ body {
     display: flex;
     justify-content: center;
     gap: var(--space-xl);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
 }
 
 .benefit-item-mobile {
@@ -276,7 +267,25 @@ body {
     margin-top: var(--space-xs);
 }
 
+/* === NOVO SUBTÍTULO HERO === */
+.hero-subtitle-mobile {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: var(--space-lg);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* === NOVOS CTAs HERO === */
 .hero-cta-mobile {
+    margin-bottom: var(--space-lg);
+}
+
+.hero-ctas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
     margin-bottom: var(--space-lg);
 }
 
@@ -288,15 +297,25 @@ body {
     border-radius: var(--radius-full);
     text-decoration: none;
     font-weight: 700;
-    background: linear-gradient(135deg, #00B894, #00CEC9);
-    color: white;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-green);
     min-height: 56px;
-    max-width: 280px;
-    margin: 0 auto;
+    max-width: 320px;
+    width: 100%;
+    justify-content: center;
+}
+
+.cta-phone {
+    background: linear-gradient(135deg, var(--phone-green), var(--success-green));
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 217, 100, 0.3);
+}
+
+.cta-whatsapp {
+    background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .cta-primary-mobile::before {
@@ -316,7 +335,14 @@ body {
 
 .cta-primary-mobile:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(0, 184, 148, 0.4);
+}
+
+.cta-phone:hover {
+    box-shadow: 0 8px 25px rgba(76, 217, 100, 0.4);
+}
+
+.cta-whatsapp:hover {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
 
 .cta-icon {
@@ -341,30 +367,23 @@ body {
     font-weight: 500;
 }
 
-.hero-secondary-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-    margin-bottom: var(--space-lg);
-}
-
-.secondary-link {
+.cta-secondary-mobile {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-size: var(--text-sm);
     font-weight: 500;
     transition: all 0.3s ease;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
 }
 
-.secondary-link:hover {
+.cta-secondary-mobile:hover {
     color: white;
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
-}
-
-.divider {
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 300;
 }
 
 .region-badge-mobile {
@@ -377,7 +396,7 @@ body {
     display: inline-block;
 }
 
-/* ==================== SIMULADOR MOBILE ====================*/
+/* ==================== SIMULADOR MOBILE OTIMIZADO ====================*/
 .simulator-mobile {
     padding: var(--space-2xl) 0;
     background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);
@@ -391,7 +410,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>') repeat;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewView="0 0 60 60"><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>') repeat;
     background-size: 60px 60px;
     opacity: 0.3;
 }
@@ -411,7 +430,15 @@ body {
     font-weight: 700;
     color: var(--dark-text);
     text-align: center;
+    margin-bottom: var(--space-sm);
+}
+
+.simulator-subtitle-mobile {
+    font-size: var(--text-sm);
+    color: var(--medium-text);
+    text-align: center;
     margin-bottom: var(--space-lg);
+    font-weight: 500;
 }
 
 .value-display-mobile {
@@ -639,7 +666,7 @@ body {
 
 .simulator-cta-mobile {
     width: 100%;
-    background: linear-gradient(135deg, var(--edp-green), var(--edp-light-green));
+    background: linear-gradient(135deg, var(--whatsapp-green), #128C7E);
     color: white;
     border: none;
     border-radius: var(--radius-full);
@@ -648,7 +675,7 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: var(--shadow-green);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -658,7 +685,7 @@ body {
 
 .simulator-cta-mobile:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 184, 148, 0.4);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
 
 /* ==================== COMO FUNCIONA MOBILE ====================*/
@@ -1033,48 +1060,6 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-/* ==================== STATS MOBILE ====================*/
-.stats-mobile {
-    padding: var(--space-2xl) 0;
-    background: var(--edp-gradient);
-    color: var(--white);
-    text-align: center;
-}
-
-.stats-grid-mobile {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-    margin-top: var(--space-lg);
-}
-
-.stat-item-mobile {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
-    padding: var(--space-lg);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-.stat-item-mobile:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.stat-number {
-    font-size: clamp(1.5rem, 8vw, 2.5rem);
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: var(--space-xs);
-}
-
-.stat-label {
-    font-size: var(--text-sm);
-    font-weight: 500;
-    opacity: 0.9;
 }
 
 /* ==================== TESTEMUNHOS MOBILE ====================*/
@@ -1569,7 +1554,6 @@ body {
     
     .hero-mobile {
         min-height: 80vh;
-        max-height: 80vh;
     }
     
     .hero-title-mobile {
@@ -1585,12 +1569,14 @@ body {
         padding: var(--space-lg);
     }
     
-    .cta-primary-mobile {
-        max-width: 320px;
+    .hero-ctas-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--space-lg);
     }
     
-    .hero-secondary-mobile {
-        flex-direction: row;
+    .cta-primary-mobile {
+        max-width: 280px;
     }
     
     .simulator-card-mobile {
@@ -1610,10 +1596,6 @@ body {
     .benefits-grid-mobile {
         flex-direction: row;
         gap: var(--space-xl);
-    }
-    
-    .stats-grid-mobile {
-        grid-template-columns: repeat(4, 1fr);
     }
     
     .testimonials-buttons-mobile {
@@ -1642,7 +1624,6 @@ body {
 @media (min-width: 1024px) {
     .hero-mobile {
         min-height: 85vh;
-        max-height: 85vh;
     }
     
     .container {
@@ -1702,6 +1683,10 @@ body {
     .results-mobile {
         grid-template-columns: 1fr;
         gap: var(--space-sm);
+    }
+    
+    .hero-ctas-container {
+        flex-direction: column;
     }
 }
 
